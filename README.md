@@ -16,6 +16,7 @@ npm i
 "animate.css": "^4.1.1",
 "notiflix": "^3.2.7",
 "moment": "^2.30.1"
+"aos": "^2.3.4",
 ```
 
 # Comandos

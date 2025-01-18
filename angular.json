@@ -33,9 +33,10 @@
             ],
             "styles": [
               "public/styles/base.scss",
-              "public/styles/scrollbar.scss"
+              "public/styles/scrollbar.scss",
+              "node_modules/aos/dist/aos.css"
             ],
-            "scripts": []
+            "scripts": ["node_modules/aos/dist/aos.js"]
           },
           "configurations": {
             "production": {
