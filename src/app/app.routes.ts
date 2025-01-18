@@ -1,4 +1,3 @@
-import { Error404Component } from './core/pages/error404/error404.component';
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [

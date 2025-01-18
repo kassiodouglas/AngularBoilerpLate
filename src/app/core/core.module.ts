@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Error404Component } from './pages/error404/error404.component';
+import { ErrorComponent } from './pages/error/error.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './core.routes';
 
@@ -8,7 +8,7 @@ import { routes } from './core.routes';
   imports: [
     CommonModule, RouterModule.forChild(routes)
   ],
-  declarations: [Error404Component],
+  declarations: [ErrorComponent],
   exports: [RouterModule]
 })
 export class CoreModule { }
