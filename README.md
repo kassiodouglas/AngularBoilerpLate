@@ -156,6 +156,7 @@ Diretório principal do projeto Angular. Contém o código-fonte da aplicação.
   - **components/**: Componentes globais usados em toda a aplicação (ex.: Header, Footer).
   - **guards/**: Guardas de rota que controlam o acesso a determinadas páginas (ex.: AuthGuard).
   - **interceptors/**: Interceptadores HTTP para manipular requisições e respostas (ex.: Adicionar cabeçalhos de autenticação).
+  - **models/**: Local de armazenamento das interfaces de dados.
   - **pages/**: Páginas principais e globais da aplicação, como tela de login ou página de erro 404.
   - **services/**: Serviços centrais que fornecem funcionalidades compartilhadas, como autenticação ou manipulação de configurações globais.
 
