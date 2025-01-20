@@ -5,6 +5,7 @@ const path = require('path');
 const args = process.argv.slice(2);
 const pathCommand = args.find(arg => arg.startsWith('--path='))?.split('=')[1];
 let name = process.env.npm_config_name;
+const feature = process.env.npm_config_feat;
 
 let where = process.env.npm_config_where || 'features';
 
@@ -49,8 +50,16 @@ if(generate === 'module'){
   name = `${name} --routing true`
 }
 
+
 // Build the Angular CLI command
-let command = `ng g ${generate} ${where}/${pathCommand === 'features' ? name : `${pathCommand}/${name}`}`;
+let command = '';
+if(generate === 'component' && feature !== undefined){
+  name = `${feature}/${pathCommand}/${name}`
+  command = `ng g ${generate} ${where}/${name}`;
+}else{
+  command = `ng g ${generate} ${where}/${pathCommand === 'features' ? name : `${pathCommand}/${name}`}`;
+}
+
 
 // Execute the command
 exec(command, (err, stdout, stderr) => {
