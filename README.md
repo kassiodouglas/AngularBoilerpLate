@@ -50,15 +50,7 @@ Abaixo está uma lista das principais bibliotecas utilizadas neste projeto, junt
 
 Cada uma dessas bibliotecas desempenha um papel essencial para aprimorar a funcionalidade, a experiência do usuário e a interatividade do aplicativo. Para mais detalhes e documentação, consulte os links correspondentes.
 
-# Bibliotecas pré-definidas
-```
-"@fortawesome/angular-fontawesome": "^0.15.0",
-"@fortawesome/fontawesome-free": "^6.6.0",
-"animate.css": "^4.1.1",
-"notiflix": "^3.2.7",
-"moment": "^2.30.1"
-"aos": "^2.3.4",
-```
+
 
 # Comandos
 
