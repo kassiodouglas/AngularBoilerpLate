@@ -64,6 +64,51 @@ Executar os testes unitários
 ng test
 ```
 
+## Comandos de Geração
+Os seguintes comandos são usados para gerar diferentes tipos de arquivos e estruturas dentro de um projeto Angular. Eles utilizam um script customizado generate.js para gerar os componentes e outras entidades com base no caminho especificado.
+
+1. <b>npm run g-component</b>
+Gera um componente no caminho features/components, ou em outro caminho configurado via o parâmetro where. Use este comando para criar novos componentes no seu projeto Angular.
+2. <b>npm run g-guard</b>
+Gera um guard no caminho core/guards, ou em outro caminho configurado via o parâmetro where. Utilize este comando para criar guards que protejam rotas no Angular.
+3. <b>npm run g-interceptor</b>
+Gera um interceptor no caminho core/interceptors, ou em outro caminho configurado via o parâmetro where. Esse comando é utilizado para criar interceptores de requisições HTTP ou outras operações no Angular.
+4. <b>npm run g-page</b>
+Gera um componente de página no caminho features/pages. Use este comando para gerar componentes específicos para páginas no Angular.
+5. <b>npm run g-service</b>
+Gera um serviço no caminho features/services. Com este comando, você cria novos serviços para manipulação de dados ou lógica de negócios.
+6. <b>npm run g-feature</b>
+Gera um módulo no caminho features, utilizado para encapsular funcionalidades específicas no projeto.
+7. <b>npm run g-module</b>
+Gera um módulo no caminho features/modules, ou em outro caminho configurado via o parâmetro where. Esse comando é utilizado para criar novos módulos dentro da aplicação.
+8. <b>npm run g-pipe</b>
+Gera um pipe no caminho shared/pipes, ou em outro caminho configurado via o parâmetro where. Use este comando para criar pipes reutilizáveis no seu projeto Angular.
+
+### Comandos Abreviados
+Você também pode usar os seguintes comandos abreviados para gerar os mesmos itens acima:
+
+- <b>npm run gc - Gera um componente.</b>
+- <b>npm run gg - Gera um guard.</b>
+- <b>npm run gi - Gera um interceptor.</b>
+- <b>npm run gs - Gera um serviço.</b>
+- <b>npm run gf - Gera uma feature (módulo).</b>
+- <b>npm run gm - Gera um módulo.</b>
+
+### Parâmetros
+- <b>--path=<entidade></b>: Define o tipo de entidade a ser gerada (ex: components, guards, services).
+- <b>--where=<diretório></b>: Define o diretório onde a entidade será gerada (valores válidos: core, features, shared).
+- <b>--name=<nome></b>: O nome do componente, serviço, guard, etc., a ser gerado. Esse nome é obtido através da variável de ambiente npm_config_name.
+
+### Exemplo de Uso
+Se você deseja gerar um componente chamado header dentro da pasta components, você pode executar:
+
+```
+npm run g-component --path=components --where=features --name=header
+```
+Esse comando criará um componente header no diretório features/components.
+
+Esses comandos são úteis para agilizar a geração de arquivos em um projeto Angular e manter a organização da estrutura de pastas.
+
 
 # Estrutura de Pastas do Projeto
 
