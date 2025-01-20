@@ -7,7 +7,23 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve": "ng serve --configuration development --host 0.0.0.0  --port 3000"
+    "serve": "ng serve --configuration development --host 0.0.0.0  --port 3000",
+
+    "g-component": "node src/commands/generate.js --path=components",
+    "g-guard": "node src/commands/generate.js --path=guards",
+    "g-interceptor": "node src/commands/generate.js --path=interceptors",
+    "g-page": "node src/commands/generate.js --path=pages",
+    "g-service": "node src/commands/generate.js --path=services",
+    "g-feature": "node src/commands/generate.js --path=features",
+    "g-module": "node src/commands/generate.js --path=modules",
+    "g-pipe": "node src/commands/generate.js --path=pipes",
+
+    "gc": "node src/commands/generate.js --path=components",
+    "gg": "node src/commands/generate.js --path=guards",
+    "gi": "node src/commands/generate.js --path=interceptors",
+    "gs": "node src/commands/generate.js --path=services",
+    "gf": "node src/commands/generate.js --path=features",
+    "gm": "node src/commands/generate.js --path=modules"
   },
   "private": true,
   "dependencies": {
