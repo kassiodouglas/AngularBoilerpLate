@@ -18,13 +18,8 @@
     "g-module": "node src/commands/generate.js --path=modules",
     "g-pipe": "node src/commands/generate.js --path=pipes",
     "g-directive": "node src/commands/generate.js --path=directives",
+    "g-model": "node src/commands/generate.js --path=models"
 
-    "gc": "node src/commands/generate.js --path=components",
-    "gg": "node src/commands/generate.js --path=guards",
-    "gi": "node src/commands/generate.js --path=interceptors",
-    "gs": "node src/commands/generate.js --path=services",
-    "gf": "node src/commands/generate.js --path=features",
-    "gm": "node src/commands/generate.js --path=modules"
   },
   "private": true,
   "dependencies": {
