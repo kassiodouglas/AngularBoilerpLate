@@ -1,245 +1,99 @@
-<!-- Este é um arquivo de exemplo da home -->
-<header data-aos="fade-up" data-aos-duration="1000" class="bg-purple-700 text-white py-6 shadow-md">
-  <h1 class="text-center text-3xl font-bold">Boilerplate Angular 19 - V1.0.0
-  </h1>
+<!-- Header -->
+<header
+  data-aos="fade-down"
+  data-aos-duration="1000"
+  class="bg-purple-700 text-white py-8 shadow-md"
+>
+  <div class="container mx-auto text-center">
+    <h1 class="text-4xl font-bold">Bem-vindo ao Boilerplate Angular 19</h1>
+    <p class="mt-2 text-lg font-light">Acelere o desenvolvimento com este kit inicial</p>
+    <button
+      [routerLink]="['/como-usar']"
+      class="mt-6 px-6 py-3 bg-white text-purple-700 font-semibold rounded-lg hover:bg-gray-100 transition duration-300"
+    >
+      <i class="fas fa-play-circle mr-2"></i>Comece Agora
+    </button>
+  </div>
 </header>
 
-<main class="p-6 container mx-auto flex flex-col items-center">
-
-  <section data-aos="fade-up" data-aos-anchor-placement="center-bottom" class="animate__fadeInUp w-full max-w-3xl mb-6">
-    <div class="bg-white shadow-lg rounded-lg p-6">
-      <h2 class="text-2xl font-semibold text-purple-700 mb-4 text-left">Instalação</h2>
-      <p class="text-gray-700">Certifique-se de ter o <b>NodeJS v20+</b> instalado. Para instalar as dependências,
-        execute o seguinte comando:</p>
-      <pre class="bg-gray-900 text-white p-4 rounded-lg overflow-auto">npm i</pre>
-    </div>
-  </section>
-
-  <section data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="animate__fadeInUp w-full max-w-3xl mb-6">
-    <div class="bg-white shadow-lg rounded-lg p-6">
-      <h2 class="text-2xl font-semibold text-purple-700 mb-4 text-left">Bibliotecas Usadas Neste Projeto</h2>
-
-      <div class="space-y-8">
-        <!-- Library 1 -->
-        <div class="p-6 bg-white shadow-md rounded-lg mb-5" data-aos="fade-up">
-          <h2 class="text-2xl font-semibold text-purple-600">1. fortawesome/angular-fontawesome</h2>
-          <p class="text-gray-700 mt-2">
-            <strong>Versão:</strong> <code>^0.15.0</code><br>
-            Essa biblioteca fornece uma integração do Font Awesome com Angular, facilitando a adição de ícones vetoriais
-            escaláveis e logotipos sociais em aplicativos Angular.
-          </p>
-          <p class="mt-2 text-gray-700"><strong>Caso de Uso:</strong> Adicionar ícones dinâmicos, personalizáveis e
-            interativos ao aplicativo, utilizando a ampla biblioteca do Font Awesome.</p>
-          <a href="https://github.com/FortAwesome/angular-fontawesome"
-            class="text-blue-500 hover:underline">Documentação</a>
-        </div>
-
-        <!-- Library 2 -->
-        <div class="p-6 bg-white shadow-md rounded-lg mb-5" data-aos="fade-up">
-          <h2 class="text-2xl font-semibold text-purple-600">2. fortawesome/fontawesome-free</h2>
-          <p class="text-gray-700 mt-2">
-            <strong>Versão:</strong> <code>^6.6.0</code><br>
-            O Font Awesome Free inclui milhares de ícones em três estilos: sólido, regular e marcas. Ele funciona
-            perfeitamente com a biblioteca angular-fontawesome.
-          </p>
-          <p class="mt-2 text-gray-700"><strong>Caso de Uso:</strong> Fornece acesso à coleção completa de ícones
-            gratuitos do Font Awesome para aprimorar a interface do usuário.</p>
-          <a href="https://fontawesome.com/docs/web/setup/packages"
-            class="text-blue-500 hover:underline">Documentação</a>
-        </div>
-
-        <!-- Library 3 -->
-        <div class="p-6 bg-white shadow-md rounded-lg mb-5" data-aos="fade-up">
-          <h2 class="text-2xl font-semibold text-purple-600">3. animate.css</h2>
-          <p class="text-gray-700 mt-2">
-            <strong>Versão:</strong> <code>^4.1.1</code><br>
-            Animate.css é uma biblioteca CSS para criar animações compatíveis com navegadores de forma simples. Inclui
-            animações predefinidas, como fade-ins, bounces e zooms.
-          </p>
-          <p class="mt-2 text-gray-700"><strong>Caso de Uso:</strong> Adicionar animações atraentes a elementos da
-            interface, como botões, modais e outros componentes.</p>
-          <a href="https://animate.style/" class="text-blue-500 hover:underline">Documentação</a>
-        </div>
-
-        <!-- Library 4 -->
-        <div class="p-6 bg-white shadow-md rounded-lg mb-5" data-aos="fade-up">
-          <h2 class="text-2xl font-semibold text-purple-600">4. notiflix</h2>
-          <p class="text-gray-700 mt-2">
-            <strong>Versão:</strong> <code>^3.2.7</code><br>
-            Notiflix é uma biblioteca JavaScript leve para criar notificações personalizáveis, alertas e diálogos.
-          </p>
-          <p class="mt-2 text-gray-700"><strong>Caso de Uso:</strong> Fornecer feedback aos usuários por meio de
-            notificações elegantes, como mensagens de sucesso, erro e informação.</p>
-          <a href="https://notiflix.github.io/" class="text-blue-500 hover:underline">Documentação</a>
-        </div>
-
-        <!-- Library 5 -->
-        <div class="p-6 bg-white shadow-md rounded-lg mb-5" data-aos="fade-up">
-          <h2 class="text-2xl font-semibold text-purple-600">5. moment</h2>
-          <p class="text-gray-700 mt-2">
-            <strong>Versão:</strong> <code>^2.30.1</code><br>
-            Moment.js é uma biblioteca para análise, validação e formatação de datas.
-          </p>
-          <p class="mt-2 text-gray-700"><strong>Caso de Uso:</strong> Simplificar o trabalho com datas, como formatação
-            e comparações.</p>
-          <a href="https://momentjs.com/" class="text-blue-500 hover:underline">Documentação</a>
-        </div>
-
-        <!-- Library 6 -->
-        <div class="p-6 bg-white shadow-md rounded-lg mb-5" data-aos="fade-up">
-          <h2 class="text-2xl font-semibold text-purple-600">6. aos (Animate on Scroll)</h2>
-          <p class="text-gray-700 mt-2">
-            <strong>Versão:</strong> <code>^2.3.4</code><br>
-            AOS é uma biblioteca para animações disparadas ao rolar a página.
-          </p>
-          <p class="mt-2 text-gray-700"><strong>Caso de Uso:</strong> Criar efeitos de rolagem envolventes, como
-            fade-ins e slide-ups, para melhorar a interatividade.</p>
-          <a href="https://michalsnik.github.io/aos/" class="text-blue-500 hover:underline">Documentação</a>
-        </div>
+<!-- Hero Section -->
+<section
+  data-aos="fade-up"
+  class="py-16 bg-gray-100 text-center"
+>
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold text-purple-700 mb-6">Por que Escolher Nosso Boilerplate?</h2>
+    <p class="text-gray-700 mb-12">
+      Nossa solução economiza tempo e oferece recursos modernos para criar aplicativos incríveis.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white shadow-md rounded-lg p-6" data-aos="zoom-in">
+        <h3 class="text-xl font-semibold text-purple-600 mb-4">
+          <i class="fas fa-rocket mr-2"></i>Instalação Rápida
+        </h3>
+        <p class="text-gray-600">Configure seu ambiente com facilidade usando NodeJS e nosso comando simples.</p>
+      </div>
+      <div class="bg-white shadow-md rounded-lg p-6" data-aos="zoom-in" data-aos-delay="100">
+        <h3 class="text-xl font-semibold text-purple-600 mb-4">
+          <i class="fas fa-tools mr-2"></i>Bibliotecas Poderosas
+        </h3>
+        <p class="text-gray-600">Inclui suporte a Font Awesome, AOS e muito mais.</p>
+      </div>
+      <div class="bg-white shadow-md rounded-lg p-6" data-aos="zoom-in" data-aos-delay="200">
+        <h3 class="text-xl font-semibold text-purple-600 mb-4">
+          <i class="fas fa-layer-group mr-2"></i>Estrutura Otimizada
+        </h3>
+        <p class="text-gray-600">Organize seus projetos com uma estrutura clara e modular.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="animate__fadeInUp w-full max-w-3xl mb-6">
-    <div class="bg-white shadow-lg rounded-lg p-6">
-      <h2 class="text-2xl font-semibold text-purple-700 mb-4 text-left">Comandos</h2>
-      <p class="text-gray-700">Utilize os seguintes comandos para tarefas comuns:</p>
-      <ul class="list-disc pl-6 text-gray-700">
-        <li>Servir na porta 3000 com ambiente 'development':
-          <pre class="bg-gray-900 text-white p-4 rounded-lg overflow-auto">npm run serve</pre>
-        </li>
-        <li>Executar os testes unitários:
-          <pre class="bg-gray-900 text-white p-4 rounded-lg overflow-auto">ng test</pre>
-        </li>
-
-        <li>
-
-          <body class="bg-gray-50 font-sans p-6">
-
-            <h1 class="text-4xl  mb-6">Comandos de Geração</h1>
-            <p class="text-lg text-gray-700 mb-6">Os seguintes comandos são usados para gerar diferentes tipos de arquivos e estruturas dentro de um projeto Angular. Eles utilizam um script customizado <code class="bg-gray-200 text-gray-700 px-2 py-1 rounded">generate.js</code> para gerar os componentes e outras entidades com base no caminho especificado.</p>
-
-            <h2 class="text-3xl text-purple-600 mb-4">Comandos de Geração</h2>
-
-            <ul class="space-y-4">
-                <li class="text-lg text-gray-800">
-                    <strong class="text-purple-700"><span class="font-semibold">npm run g-component</span></strong>:
-                    Gera um <strong>componente</strong> no caminho <code class="bg-gray-200 text-gray-700 px-2 py-1 rounded">features/components</code>, ou em outro caminho configurado via o parâmetro <code class="bg-gray-200 text-gray-700 px-2 py-1 rounded">where</code>. Use este comando para criar novos componentes no seu projeto Angular.
-                </li>
-                <li class="text-lg text-gray-800">
-                    <strong class="text-purple-700"><span class="font-semibold">npm run g-guard</span></strong>:
-                    Gera um <strong>guard</strong> no caminho <code class="bg-gray-200 text-gray-700 px-2 py-1 rounded">core/guards</code>, ou em outro caminho configurado via o parâmetro <code class="bg-gray-200 text-gray-700 px-2 py-1 rounded">where</code>. Utilize este comando para criar guards que protejam rotas no Angular.
-                </li>
-                <li class="text-lg text-gray-800">
-                    <strong class="text-purple-700"><span class="font-semibold">npm run g-interceptor</span></strong>:
-                    Gera um <strong>interceptor</strong> no caminho <code class="bg-gray-200 text-gray-700 px-2 py-1 rounded">core/interceptors</code>, ou em outro caminho configurado via o parâmetro <code class="bg-gray-200 text-gray-700 px-2 py-1 rounded">where</code>. Esse comando é utilizado para criar interceptores de requisições HTTP ou outras operações no Angular.
-                </li>
-                <li class="text-lg text-gray-800">
-                    <strong class="text-purple-700"><span class="font-semibold">npm run g-page</span></strong>:
-                    Gera um <strong>componente de página</strong> no caminho <code class="bg-gray-200 text-gray-700 px-2 py-1 rounded">features/pages</code>. Use este comando para gerar componentes específicos para páginas no Angular.
-                </li>
-                <li class="text-lg text-gray-800">
-                    <strong class="text-purple-700"><span class="font-semibold">npm run g-service</span></strong>:
-                    Gera um <strong>serviço</strong> no caminho <code class="bg-gray-200 text-gray-700 px-2 py-1 rounded">features/services</code>. Com este comando, você cria novos serviços para manipulação de dados ou lógica de negócios.
-                </li>
-                <li class="text-lg text-gray-800">
-                    <strong class="text-purple-700"><span class="font-semibold">npm run g-feature</span></strong>:
-                    Gera um <strong>módulo</strong> no caminho <code class="bg-gray-200 text-gray-700 px-2 py-1 rounded">features</code>, utilizado para encapsular funcionalidades específicas no projeto.
-                </li>
-                <li class="text-lg text-gray-800">
-                    <strong class="text-purple-700"><span class="font-semibold">npm run g-module</span></strong>:
-                    Gera um <strong>módulo</strong> no caminho <code class="bg-gray-200 text-gray-700 px-2 py-1 rounded">features/modules</code>, ou em outro caminho configurado via o parâmetro <code class="bg-gray-200 text-gray-700 px-2 py-1 rounded">where</code>. Esse comando é utilizado para criar novos módulos dentro da aplicação.
-                </li>
-                <li class="text-lg text-gray-800">
-                    <strong class="text-purple-700"><span class="font-semibold">npm run g-pipe</span></strong>:
-                    Gera um <strong>pipe</strong> no caminho <code class="bg-gray-200 text-gray-700 px-2 py-1 rounded">shared/pipes</code>, ou em outro caminho configurado via o parâmetro <code class="bg-gray-200 text-gray-700 px-2 py-1 rounded">where</code>. Use este comando para criar pipes reutilizáveis no seu projeto Angular.
-                </li>
-            </ul>
-
-            <h2 class="text-3xl text-purple-600 mt-8 mb-4">Comandos Abreviados</h2>
-
-            <ul class="space-y-4">
-                <li><strong class="text-purple-700"><span class="font-semibold">npm run gc</span></strong>: Gera um <strong>componente</strong>.</li>
-                <li><strong class="text-purple-700"><span class="font-semibold">npm run gg</span></strong>: Gera um <strong>guard</strong>.</li>
-                <li><strong class="text-purple-700"><span class="font-semibold">npm run gi</span></strong>: Gera um <strong>interceptor</strong>.</li>
-                <li><strong class="text-purple-700"><span class="font-semibold">npm run gs</span></strong>: Gera um <strong>serviço</strong>.</li>
-                <li><strong class="text-purple-700"><span class="font-semibold">npm run gf</span></strong>: Gera uma <strong>feature</strong> (módulo).</li>
-                <li><strong class="text-purple-700"><span class="font-semibold">npm run gm</span></strong>: Gera um <strong>módulo</strong>.</li>
-            </ul>
-
-            <h2 class="text-3xl text-purple-600 mt-8 mb-4">Parâmetros</h2>
-            <p class="text-lg text-gray-700 mb-4"><strong>--path=&lt;entidade&gt;</strong>: Define o tipo de entidade a ser gerada (ex: <code class="bg-gray-200 text-gray-700 px-2 py-1 rounded">components</code>, <code class="bg-gray-200 text-gray-700 px-2 py-1 rounded">guards</code>, <code class="bg-gray-200 text-gray-700 px-2 py-1 rounded">services</code>).</p>
-            <p class="text-lg text-gray-700 mb-4"><strong>--where=&lt;diretório&gt;</strong>: Define o diretório onde a entidade será gerada (valores válidos: <code class="bg-gray-200 text-gray-700 px-2 py-1 rounded">core</code>, <code class="bg-gray-200 text-gray-700 px-2 py-1 rounded">features</code>, <code class="bg-gray-200 text-gray-700 px-2 py-1 rounded">shared</code>).</p>
-            <p class="text-lg text-gray-700 mb-4"><strong>name</strong>: O nome do componente, serviço, guard, etc., a ser gerado. Esse nome é obtido através da variável de ambiente <code class="bg-gray-200 text-gray-700 px-2 py-1 rounded">npm_config_name</code>.</p>
-
-            <h2 class="text-3xl text-purple-600 mt-8 mb-4">Exemplo de Uso</h2>
-            <p class="text-lg text-gray-700 mb-4">Se você deseja gerar um componente chamado <strong>header</strong> dentro da pasta <code class="bg-gray-200 text-gray-700 px-2 py-1 rounded">components</code>, você pode executar:</p>
-
-            <pre class="bg-gray-800 text-white p-4 rounded-md overflow-x-auto">npm run g-component --path=components --where=features --name=header</pre>
-
-            <p class="text-lg text-gray-700 mt-4">Esse comando criará um componente <strong>header</strong> no diretório <code class="bg-gray-200 text-gray-700 px-2 py-1 rounded">features/components</code>.</p>
-
-        </body>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section data-aos="fade-up" data-aos-anchor-placement="center-bottom" class="w-full max-w-3xl mb-6">
-    <div class="bg-white shadow-lg rounded-lg p-6">
-      <h2 class="text-2xl font-semibold text-purple-700 mb-4 text-left">Estrutura de Pastas</h2>
-      <pre class="bg-gray-900 text-white p-4 rounded-lg overflow-auto">
-                            ├─public
-                            │ ├───fonts
-                            │ ├───images
-                            │ └───styles
-                            │ └───data
-                            └─src
-                              ├───app
-                              │   ├───core
-                              │   │   ├───components
-                              │   │   ├───guards
-                              │   │   ├───interceptors
-                              │   │   ├───pages
-                              │   │   └───services
-                              │   ├───features
-                              │   └───shared
-                              │       ├───components
-                              │       ├───directives
-                              │       └───pipes
-                              └───environments
-      </pre>
-      <div class="mt-4">
-        <h3 class="text-xl font-medium">Diretórios e Finalidades</h3>
-        <p class="text-gray-700 mt-7"><b>public/</b>: Diretório para arquivos estáticos que não são processados pelo
-          Angular e podem ser acessados diretamente pelo navegador:</p>
-        <ul class="list-disc pl-6 text-gray-700">
-          <li><b>fonts/</b>: Armazena fontes personalizadas usadas na aplicação.</li>
-          <li><b>images/</b>: Contém imagens estáticas, como logotipos ou ícones.</li>
-          <li><b>styles/</b>: Armazena arquivos CSS ou SCSS globais que não pertencem a um componente específico.</li>
-          <li><b>data/</b>: Pode conter arquivos JSON ou outros dados estáticos utilizados pela aplicação.</li>
-        </ul>
-
-        <p class="text-gray-700 mt-10"><b>src/</b>: Diretório principal do projeto Angular. Contém o código-fonte da
-          aplicação.</p>
-        <ul class="list-disc pl-6 text-gray-700">
-          <li><b>app/core/</b>: Contém código essencial para a aplicação, como componentes globais (Header, Footer),
-            guards, interceptors, páginas globais (login, erro 404) e serviços centrais.</li>
-          <li><b>app/features/</b>: Contém módulos específicos de funcionalidades ou páginas, organizados por domínio
-            ou caso de uso (ex.: products, users).</li>
-          <li><b>app/shared/</b>: Diretório para recursos reutilizáveis, como componentes (botões, modais), diretivas
-            personalizadas e pipes reutilizáveis.</li>
-          <li><b>environments/</b>: Arquivos de configuração para diferentes ambientes (desenvolvimento, produção).
-          </li>
-        </ul>
+<!-- Features Section -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold text-purple-700 mb-8">Recursos Principais</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="p-6 border rounded-lg" data-aos="fade-up">
+        <h3 class="text-xl font-semibold text-purple-600">
+          <i class="fas fa-magic mr-2"></i>Animações com AOS
+        </h3>
+        <p class="text-gray-600">Torne sua interface mais interativa e atraente.</p>
+      </div>
+      <div class="p-6 border rounded-lg" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-xl font-semibold text-purple-600">
+          <i class="fas fa-icons mr-2"></i>Ícones Font Awesome
+        </h3>
+        <p class="text-gray-600">Melhore a usabilidade com ícones dinâmicos e personalizáveis.</p>
+      </div>
+      <div class="p-6 border rounded-lg" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-xl font-semibold text-purple-600">
+          <i class="fas fa-bell mr-2"></i>Notificações com Notiflix
+        </h3>
+        <p class="text-gray-600">Notifique usuários com alertas estilizados.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer data-aos="fade-up" data-aos-anchor-placement="bottom-bottom"
-    class="mt-12 text-center animate__animated animate__fadeInUp">
-    <p class="text-gray-600">&copy; 2025 - Boilerplate Angular 19. Desenvolvido com <span
-        class="text-red-500">&hearts;</span> para você!</p>
-  </footer>
+<!-- Call to Action -->
+<section
+  class="py-16 bg-purple-700 text-white text-center"
+  data-aos="fade-up"
+>
+  <h2 class="text-3xl font-bold mb-6">Pronto para Começar?</h2>
+  <p class="text-lg mb-8">Baixe agora nosso Boilerplate e leve seu projeto para o próximo nível.</p>
+  <button
+    [routerLink]="['/como-usar']"
+    class="px-6 py-3 bg-white text-purple-700 font-semibold rounded-lg hover:bg-gray-100 transition duration-300"
+  >
+    <i class="fas fa-download mr-2"></i>Vamos lá!
+  </button>
+</section>
 
-</main>
+<!-- Footer -->
+<footer data-aos="fade-up" data-aos-anchor-placement="bottom-bottom"
+class="my-12 text-center animate__animated animate__fadeInUp">
+<p class="text-gray-600">&copy; 2025 - Boilerplate Angular 19. Desenvolvido com <span
+    class="text-red-500">&hearts;</span> para você!</p>
+</footer>
