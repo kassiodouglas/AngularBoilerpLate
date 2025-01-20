@@ -83,16 +83,9 @@ Gera um módulo no caminho features, utilizado para encapsular funcionalidades e
 Gera um módulo no caminho features/modules, ou em outro caminho configurado via o parâmetro where. Esse comando é utilizado para criar novos módulos dentro da aplicação.
 8. <b>npm run g-pipe</b>
 Gera um pipe no caminho shared/pipes, ou em outro caminho configurado via o parâmetro where. Use este comando para criar pipes reutilizáveis no seu projeto Angular.
+9. <b>npm run g-model</b>
+Gera arquivos de interface dentro do core.
 
-### Comandos Abreviados
-Você também pode usar os seguintes comandos abreviados para gerar os mesmos itens acima:
-
-- <b>npm run gc - Gera um componente.</b>
-- <b>npm run gg - Gera um guard.</b>
-- <b>npm run gi - Gera um interceptor.</b>
-- <b>npm run gs - Gera um serviço.</b>
-- <b>npm run gf - Gera uma feature (módulo).</b>
-- <b>npm run gm - Gera um módulo.</b>
 
 ### Parâmetros
 - <b>--path=<entidade></b>: Define o tipo de entidade a ser gerada (ex: components, guards, services).
