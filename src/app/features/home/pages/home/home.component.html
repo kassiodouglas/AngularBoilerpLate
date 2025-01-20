@@ -1,4 +1,3 @@
-
 <!-- Este é um arquivo de exemplo da home -->
 <header data-aos="fade-up" data-aos-duration="1000" class="bg-purple-700 text-white py-6 shadow-md">
   <h1 class="text-center text-3xl font-bold">Boilerplate Angular 19 - V1.0.0
@@ -16,18 +15,88 @@
     </div>
   </section>
 
-  <section data-aos="fade-up" data-aos-anchor-placement="center-bottom" class="animate__fadeInUp w-full max-w-3xl mb-6">
+  <section data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="animate__fadeInUp w-full max-w-3xl mb-6">
     <div class="bg-white shadow-lg rounded-lg p-6">
-      <h2 class="text-2xl font-semibold text-purple-700 mb-4 text-left">Bibliotecas Pré-definidas</h2>
-      <p class="text-gray-700">As seguintes bibliotecas já estão incluídas no projeto:</p>
-      <pre class="bg-gray-900 text-white p-4 rounded-lg overflow-auto">
-"&#64;fortawesome/angular-fontawesome": "^0.15.0"
-"&#64;fortawesome/fontawesome-free": "^6.6.0"
-"animate.css": "^4.1.1"
-"notiflix": "^3.2.7"
-"moment": "^2.30.1"
-"aos": "^2.3.4"
-</pre>
+      <h2 class="text-2xl font-semibold text-purple-700 mb-4 text-left">Bibliotecas Usadas Neste Projeto</h2>
+
+      <div class="space-y-8">
+        <!-- Library 1 -->
+        <div class="p-6 bg-white shadow-md rounded-lg mb-5" data-aos="fade-up">
+          <h2 class="text-2xl font-semibold text-purple-600">1. fortawesome/angular-fontawesome</h2>
+          <p class="text-gray-700 mt-2">
+            <strong>Versão:</strong> <code>^0.15.0</code><br>
+            Essa biblioteca fornece uma integração do Font Awesome com Angular, facilitando a adição de ícones vetoriais
+            escaláveis e logotipos sociais em aplicativos Angular.
+          </p>
+          <p class="mt-2 text-gray-700"><strong>Caso de Uso:</strong> Adicionar ícones dinâmicos, personalizáveis e
+            interativos ao aplicativo, utilizando a ampla biblioteca do Font Awesome.</p>
+          <a href="https://github.com/FortAwesome/angular-fontawesome"
+            class="text-blue-500 hover:underline">Documentação</a>
+        </div>
+
+        <!-- Library 2 -->
+        <div class="p-6 bg-white shadow-md rounded-lg mb-5" data-aos="fade-up">
+          <h2 class="text-2xl font-semibold text-purple-600">2. fortawesome/fontawesome-free</h2>
+          <p class="text-gray-700 mt-2">
+            <strong>Versão:</strong> <code>^6.6.0</code><br>
+            O Font Awesome Free inclui milhares de ícones em três estilos: sólido, regular e marcas. Ele funciona
+            perfeitamente com a biblioteca angular-fontawesome.
+          </p>
+          <p class="mt-2 text-gray-700"><strong>Caso de Uso:</strong> Fornece acesso à coleção completa de ícones
+            gratuitos do Font Awesome para aprimorar a interface do usuário.</p>
+          <a href="https://fontawesome.com/docs/web/setup/packages"
+            class="text-blue-500 hover:underline">Documentação</a>
+        </div>
+
+        <!-- Library 3 -->
+        <div class="p-6 bg-white shadow-md rounded-lg mb-5" data-aos="fade-up">
+          <h2 class="text-2xl font-semibold text-purple-600">3. animate.css</h2>
+          <p class="text-gray-700 mt-2">
+            <strong>Versão:</strong> <code>^4.1.1</code><br>
+            Animate.css é uma biblioteca CSS para criar animações compatíveis com navegadores de forma simples. Inclui
+            animações predefinidas, como fade-ins, bounces e zooms.
+          </p>
+          <p class="mt-2 text-gray-700"><strong>Caso de Uso:</strong> Adicionar animações atraentes a elementos da
+            interface, como botões, modais e outros componentes.</p>
+          <a href="https://animate.style/" class="text-blue-500 hover:underline">Documentação</a>
+        </div>
+
+        <!-- Library 4 -->
+        <div class="p-6 bg-white shadow-md rounded-lg mb-5" data-aos="fade-up">
+          <h2 class="text-2xl font-semibold text-purple-600">4. notiflix</h2>
+          <p class="text-gray-700 mt-2">
+            <strong>Versão:</strong> <code>^3.2.7</code><br>
+            Notiflix é uma biblioteca JavaScript leve para criar notificações personalizáveis, alertas e diálogos.
+          </p>
+          <p class="mt-2 text-gray-700"><strong>Caso de Uso:</strong> Fornecer feedback aos usuários por meio de
+            notificações elegantes, como mensagens de sucesso, erro e informação.</p>
+          <a href="https://notiflix.github.io/" class="text-blue-500 hover:underline">Documentação</a>
+        </div>
+
+        <!-- Library 5 -->
+        <div class="p-6 bg-white shadow-md rounded-lg mb-5" data-aos="fade-up">
+          <h2 class="text-2xl font-semibold text-purple-600">5. moment</h2>
+          <p class="text-gray-700 mt-2">
+            <strong>Versão:</strong> <code>^2.30.1</code><br>
+            Moment.js é uma biblioteca para análise, validação e formatação de datas.
+          </p>
+          <p class="mt-2 text-gray-700"><strong>Caso de Uso:</strong> Simplificar o trabalho com datas, como formatação
+            e comparações.</p>
+          <a href="https://momentjs.com/" class="text-blue-500 hover:underline">Documentação</a>
+        </div>
+
+        <!-- Library 6 -->
+        <div class="p-6 bg-white shadow-md rounded-lg mb-5" data-aos="fade-up">
+          <h2 class="text-2xl font-semibold text-purple-600">6. aos (Animate on Scroll)</h2>
+          <p class="text-gray-700 mt-2">
+            <strong>Versão:</strong> <code>^2.3.4</code><br>
+            AOS é uma biblioteca para animações disparadas ao rolar a página.
+          </p>
+          <p class="mt-2 text-gray-700"><strong>Caso de Uso:</strong> Criar efeitos de rolagem envolventes, como
+            fade-ins e slide-ups, para melhorar a interatividade.</p>
+          <a href="https://michalsnik.github.io/aos/" class="text-blue-500 hover:underline">Documentação</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -40,7 +109,7 @@
           <pre class="bg-gray-900 text-white p-4 rounded-lg overflow-auto">npm run serve</pre>
         </li>
         <li>Executar os testes unitários:
-          <pre class="bg-gray-900 text-white p-4 rounded-lg overflow-auto">npm run test</pre>
+          <pre class="bg-gray-900 text-white p-4 rounded-lg overflow-auto">ng test</pre>
         </li>
       </ul>
     </div>
@@ -97,7 +166,8 @@
     </div>
   </section>
 
-  <footer data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" class="mt-12 text-center animate__animated animate__fadeInUp">
+  <footer data-aos="fade-up" data-aos-anchor-placement="bottom-bottom"
+    class="mt-12 text-center animate__animated animate__fadeInUp">
     <p class="text-gray-600">&copy; 2025 - Boilerplate Angular 19. Desenvolvido com <span
         class="text-red-500">&hearts;</span> para você!</p>
   </footer>
