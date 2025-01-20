@@ -18,6 +18,7 @@ const generateMap = {
   features: 'module',
   modules: 'module',
   pipes: 'pipe',
+  directives: 'directive',
 };
 
 let generate = generateMap[pathCommand] || 'component';
@@ -25,7 +26,7 @@ let generate = generateMap[pathCommand] || 'component';
 // Set 'where' for specific cases
 if (['guards', 'interceptors'].includes(pathCommand)) {
   where = 'core';
-}else if (['pipes'].includes(pathCommand)) {
+}else if (['pipes','directives'].includes(pathCommand)) {
   where = 'shared';
 }
 
@@ -34,7 +35,7 @@ if (!['core', 'features', 'shared'].includes(where)) {
   process.exit(1);
 }
 
-if (!['components', 'guards', 'interceptors', 'pages', 'services', 'features', 'modules','pipes'].includes(pathCommand)) {
+if (!['components', 'guards', 'interceptors', 'pages', 'services', 'features', 'modules','pipes','directives'].includes(pathCommand)) {
   console.error(`Error: Param 'path' is invalid. Valid options: 'components', 'guards', 'interceptors', 'pages', 'services', 'features', 'modules'`);
   process.exit(1);
 }

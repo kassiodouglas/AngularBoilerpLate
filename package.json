@@ -17,6 +17,7 @@
     "g-feature": "node src/commands/generate.js --path=features",
     "g-module": "node src/commands/generate.js --path=modules",
     "g-pipe": "node src/commands/generate.js --path=pipes",
+    "g-directive": "node src/commands/generate.js --path=directives",
 
     "gc": "node src/commands/generate.js --path=components",
     "gg": "node src/commands/generate.js --path=guards",
