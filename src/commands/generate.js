@@ -4,7 +4,7 @@ const path = require('path');
 // Parse command-line arguments
 const args = process.argv.slice(2);
 const pathCommand = args.find(arg => arg.startsWith('--path='))?.split('=')[1];
-const name = process.env.npm_config_name;
+let name = process.env.npm_config_name;
 
 let where = process.env.npm_config_where || 'features';
 
@@ -43,6 +43,10 @@ if (!['components', 'guards', 'interceptors', 'pages', 'services', 'features', '
 if (!name) {
   console.error(`Error: Param 'name' is required!`);
   process.exit(1);
+}
+
+if(generate === 'module'){
+  name = `${name} --routing true`
 }
 
 // Build the Angular CLI command
