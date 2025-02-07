@@ -1,0 +1,209 @@
+<div class="offcanvas-header rounded-lg ">
+  <div class="offcanvas-title">
+    <img [src]="darkModeService.isDarkMode ? 'images/logo/logo_inline_white.svg': 'images/logo/logo_inline_color.svg'" class="h-7" />
+  </div>
+  <button type="button" class="btn-close text-reset dark:bg-slate-500" aria-label="Close"
+    (click)="activeOffcanvas.dismiss('Cross click')"></button>
+</div>
+
+<div class="offcanvas-body">
+
+  <div
+    class="relative flex h-full w-full flex-col text-gray-700 overflow-scroll overflow-x-hidden">
+
+    <div class="p-2 hidden">
+      <div class="relative h-10 w-full min-w-[200px]">
+        <div class="absolute grid w-5 h-5 top-2/4 right-3 -translate-y-2/4 place-items-center text-blue-gray-500">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" aria-hidden="true" class="w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path>
+          </svg>
+        </div>
+        <input
+          class="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 !pr-9 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+          placeholder=" " />
+        <label
+          class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-gray-900 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-gray-900 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+          Search
+        </label>
+      </div>
+    </div>
+
+    <nav class="flex min-w-[240px] max-h-[calc(100vh-120px)] flex-col gap-1 p-2 font-sans text-base font-normal text-blue-gray-700 ">
+
+      <shared-sidebar-link label="Administração" [sub]="true">
+        <div icon>
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+        </div>
+        <div links>
+
+          <shared-sidebar-link label="Usuários" (click)="routerLink('/administracao/usuarios')">
+            <div icon>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
+              stroke="currentColor" aria-hidden="true" class="w-5 h-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+            </svg>
+            </div>
+          </shared-sidebar-link>
+
+          <shared-sidebar-link label="Veículos" (click)="routerLink('/administracao/veiculos')">
+            <div icon>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
+              stroke="currentColor" aria-hidden="true" class="w-5 h-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+            </svg>
+            </div>
+          </shared-sidebar-link>
+
+          <shared-sidebar-link label="Modelos" (click)="routerLink('/administracao/veiculos/modelos')">
+            <div icon>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
+              stroke="currentColor" aria-hidden="true" class="w-5 h-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+            </svg>
+            </div>
+          </shared-sidebar-link>
+
+          <shared-sidebar-link label="Contratos" (click)="routerLink('/administracao/contratos')">
+            <div icon>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
+              stroke="currentColor" aria-hidden="true" class="w-5 h-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+            </svg>
+            </div>
+          </shared-sidebar-link>
+
+          <shared-sidebar-link label="Clientes" (click)="routerLink('/administracao/clientes')">
+            <div icon>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
+              stroke="currentColor" aria-hidden="true" class="w-5 h-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+            </svg>
+            </div>
+          </shared-sidebar-link>
+
+          <shared-sidebar-link label="Unidades" (click)="routerLink('/administracao/unidades')">
+            <div icon>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
+              stroke="currentColor" aria-hidden="true" class="w-5 h-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+            </svg>
+            </div>
+          </shared-sidebar-link>
+
+          <shared-sidebar-link label="Atendimentos"  (click)="routerLink('/administracao/atendimentos')">
+            <div icon>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
+              stroke="currentColor" aria-hidden="true" class="w-5 h-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+            </svg>
+            </div>
+          </shared-sidebar-link>
+
+          <shared-sidebar-link label="Caixas" (click)="routerLink('/administracao/caixas')">
+            <div icon>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
+              stroke="currentColor" aria-hidden="true" class="w-5 h-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+            </svg>
+            </div>
+          </shared-sidebar-link>
+
+          <shared-sidebar-link label="Mensalistas" (click)="routerLink('/administracao/mensalistas')">
+            <div icon>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
+              stroke="currentColor" aria-hidden="true" class="w-5 h-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+            </svg>
+            </div>
+          </shared-sidebar-link>
+
+          <shared-sidebar-link label="Vagas" (click)="routerLink('/administracao/vagas')">
+            <div icon>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
+              stroke="currentColor" aria-hidden="true" class="w-5 h-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+            </svg>
+            </div>
+          </shared-sidebar-link>
+        </div>
+      </shared-sidebar-link>
+
+      <shared-sidebar-link label="Reservas" (click)="routerLink('/reservas')">
+        <div icon>
+          <i class="fa-solid fa-calendar-days"></i>
+        </div>
+      </shared-sidebar-link>
+
+      <shared-sidebar-link label="Atendimento" (click)="routerLink('/atendimento')">
+        <div icon>
+          <i class="fa-solid fa-road-barrier"></i>
+        </div>
+      </shared-sidebar-link>
+
+      <shared-sidebar-link label="Checklists" (click)="routerLink('/checklists')">
+        <div icon>
+          <i class="fa-solid fa-list-check"></i>
+        </div>
+      </shared-sidebar-link>
+
+      <shared-sidebar-link label="Pendentes" (click)="routerLink('/patio/pendentes')">
+        <div icon>
+          <i class="fa-solid fa-hourglass-half"></i>
+        </div>
+      </shared-sidebar-link>
+
+      <shared-sidebar-link label="Pátio" (click)="routerLink('/patio')">
+        <div icon>
+          <i class="fa-solid fa-car"></i>
+        </div>
+      </shared-sidebar-link>
+
+      <shared-sidebar-link label="Caixa" (click)="routerLink('/caixa')">
+        <div icon>
+          <i class="fa-solid fa-cash-register"></i>
+        </div>
+      </shared-sidebar-link>
+
+      <shared-sidebar-link label="Conferências" (click)="routerLink('/conferencia')">
+        <div icon>
+          <i class="fa-solid fa-check-double"></i>
+        </div>
+      </shared-sidebar-link>
+
+      <shared-sidebar-link label="Relatórios" (click)="routerLink('/relatorios')">
+        <div icon>
+          <i class="fa-solid fa-file"></i>
+        </div>
+      </shared-sidebar-link>
+
+      <hr class="my-2 border-blue-gray-50" />
+
+      <shared-sidebar-link label="Meus dados" (click)="routerLink('/meus-dados')">
+        <div icon>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+            class="w-5 h-5">
+            <path fill-rule="evenodd"
+              d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </div>
+      </shared-sidebar-link>
+
+      <shared-sidebar-link label="Sair" (click)="routerLink('/logout')">
+        <div icon>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+            class="w-5 h-5">
+            <path fill-rule="evenodd"
+              d="M12 2.25a.75.75 0 01.75.75v9a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM6.166 5.106a.75.75 0 010 1.06 8.25 8.25 0 1011.668 0 .75.75 0 111.06-1.06c3.808 3.807 3.808 9.98 0 13.788-3.807 3.808-9.98 3.808-13.788 0-3.808-3.807-3.808-9.98 0-13.788a.75.75 0 011.06 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </div>
+      </shared-sidebar-link>
+
+    </nav>
+
+  </div>
+
+</div>

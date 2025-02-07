@@ -1,0 +1,40 @@
+<ng-template #tipContent>
+  {{label}}
+  @if(tooltip){
+    <br>
+    <small class="font-bold" [innerHTML]="tooltip"></small>
+  }
+</ng-template>
+
+<div class="!min-h-[50px] rounded-md" [id]="loaderId" [ngbTooltip]="tipContent" [openDelay]="1000">
+  <div class="relative">
+    <select
+      [id]="id"
+      placeholder=" "
+      [class]="classInput"
+      (blur)="setTouched()"
+      [(ngModel)]="value"
+      [disabled]="disabled"
+      [ngClass]="{'!border-red-500':hasErrors,'!border-orange-400':!control||!formGroup,'!border-green-400':control.valid}"
+    >
+      <option value="" disabled selected hidden>Escolha uma opção</option>
+      @for (option of options; track option) {
+        <option [ngValue]="option.value">{{option.label}}</option>
+      }
+      @if (options.length == 0){
+        <option disabled>Nenhuma opção carregada</option>
+      }
+    </select>
+    <label
+      [for]="id"
+      [class]="classLabel" [ngClass]="{'opacity-40 bg-transparent  cursor-not-allowed':disabled}">
+      {{label}}
+    </label>
+
+    <i class="fa-solid fa-chevron-down absolute end-5 top-2 text-lg opacity-55" [ngClass]="{'!opacity-30  cursor-not-allowed':disabled}"></i>
+  </div>
+</div>
+
+<validation [formGroup]="formGroup" [control]="control"/>
+
+<debugy [debug]="debug" [label]="label" [control]="control" [loading]="loading"/>

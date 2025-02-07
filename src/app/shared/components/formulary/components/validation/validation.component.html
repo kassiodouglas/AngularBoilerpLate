@@ -1,0 +1,15 @@
+@if(!formGroup){
+  <div class="text-yellow-600 text-sm my-1">
+    <i class="fa-solid fa-triangle-exclamation px-2"></i> 'Form' não configurado
+  </div>
+}
+@if(!control){
+  <div class="text-orange-600 text-sm my-1">
+    <i class="fa-solid fa-triangle-exclamation px-2"></i> 'Control' não configurado
+  </div>
+}
+@if(control && control.errors && control.touched){
+  @for(error of getErrors(control.errors, control); track error){
+    <div class="text-red-600 dark:text-red-300 text-xs my-1">{{ error }}</div>
+  }
+}

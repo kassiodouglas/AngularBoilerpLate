@@ -1,0 +1,34 @@
+<div role="button" (click)="open()"
+  class="
+  flex items-center
+  w-full p-3 leading-tight transition-all
+  rounded-lg outline-none
+  text-start
+  hover:bg-blue-500 hover:bg-opacity-80 hover:text-blue-gray-900 hover:text-white
+  focus:bg-blue-500 focus:bg-opacity-80 focus:text-blue-gray-900
+  active:bg-blue-500 active:bg-opacity-80 active:text-blue-gray-900
+  dark:bg-slate-800 dark:text-slate-50
+  dark:hover:bg-blue-500 dark:hover:bg-opacity-80 dark:hover:text-blue-gray-900 dark:hover:text-white
+  "
+  [ngClass]="{'bg-blue-600 hover:bg-blue-700 text-white':opened}">
+
+  <div class="grid mr-4 place-items-center">
+    <ng-content select="[icon]"></ng-content>
+  </div>
+
+  {{label}}
+
+  @if(sub){
+    <div class="ml-16">
+      <i class="fa-solid" [ngClass]="opened ? 'fa-angle-up': 'fa-angle-down'"></i>
+    </div>
+  }
+
+</div>
+
+@if(sub && opened){
+  <div class="bg-slate-50 dark:bg-slate-800 dark:text-slate-50">
+    <ng-content select="[links]"></ng-content>
+    <hr class="my-2 border-blue-gray-50" />
+  </div>
+}

@@ -1,0 +1,31 @@
+<ng-template #tipContent>
+  {{label}}
+  @if(tooltip){
+  <br>
+  <small class="font-bold" [innerHTML]="tooltip"></small>
+  }
+</ng-template>
+
+<div class="!min-h-[50px] rounded-md" [id]="loaderId">
+  <div class="relative" [ngbTooltip]="tipContent" [openDelay]="1000">
+
+    <label [for]="id" [class]="classLabel" [ngClass]="{'opacity-40 bg-transparent cursor-not-allowed':disabled}">
+      {{label}}
+    </label>
+
+    <div class="relative inline-block w-full h-10 mt-3 ms-1">
+      <input
+        (click)="toggleChecked()" (blur)="setTouched()" [disabled]="disabled" [checked]="value"  [id]="id" [type]="type"
+        [class]="classInput"
+        [ngClass]="{'opacity-40 cursor-not-allowed':disabled, '!border-red-500':hasErrors,'!border-orange-400':!control||!formGroup,'!border-green-400':control?.valid && control?.touched}"
+      />
+      <label [for]="id" [class]="classLabelCheckbox"></label>
+    </div>
+
+
+  </div>
+</div>
+
+<validation [formGroup]="formGroup" [control]="control" />
+
+<debugy [debug]="debug" [label]="label" [control]="control" [loading]="loading" />

@@ -1,0 +1,88 @@
+<ng-template #tipContent>
+  {{label}}
+  @if(tooltip){
+  <br>
+  <small class="font-bold" [innerHTML]="tooltip"></small>
+  }
+</ng-template>
+
+<div class="rounded-md h-auto" [id]="loaderId">
+  <div class="relative" [ngbTooltip]="tipContent" [openDelay]="1000">
+
+    <button type="button" (click)="openModal(modal)" (blur)="setTouched()" [disabled]="disabled" [id]="id"  placeholder=" "
+      [class]="classInput"
+      [ngClass]="{'!border-red-500':hasErrors,'!border-orange-400':!control||!formGroup,'!border-green-400 !bg-green-200':signed}">
+
+      <i class="fa-solid fa-signature text-xl ms-4 text-gray-500 dark:group-hover:text-blue-400" [ngClass]="{'opacity-40 bg-transparent cursor-not-allowed':disabled}"></i>
+
+      @if(signed){
+        <div class="w-full text-center me-3 text-gray-600 text-sm font-bold">
+          Assinado! <i class="fa-solid fa-check font-bold"></i>
+        </div>
+      }
+
+    </button>
+
+    <label [for]="id" [class]="classLabel" [ngClass]="{'opacity-40 bg-transparent cursor-not-allowed':disabled}">
+      {{label}}
+    </label>
+  </div>
+</div>
+
+<validation [formGroup]="formGroup" [control]="control" />
+
+<debugy [debug]="debug" [label]="label" [control]="control" [loading]="loading" />
+
+
+
+
+
+<!-- modal -->
+<ng-template #modal let-modal>
+  <div class="modal-header dark:bg-slate-800 border-b dark:border-gray-700 flex justify-between items-center">
+    <h5 class="modal-title flex items-center text-lg font-semibold text-gray-800 dark:text-gray-100">
+      <i class="fa-solid fa-signature mx-2"></i> Assinatura Digital
+    </h5>
+    <button type="button" class="text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white transition"
+      aria-label="Close" (click)="modal.dismiss('Cross click')">
+      ✖
+    </button>
+  </div>
+
+  <div class="modal-body dark:bg-slate-800 p-6">
+    <div class="w-full h-full">
+      <div class="w-full h-[100%] border-2 border-dashed border-gray-400 dark:border-gray-500 rounded-lg bg-gray-100 dark:bg-gray-700 mb-1
+        flex items-center justify-center text-gray-400 dark:text-gray-300 relative">
+        <canvas id="signatureCanvas" class="absolute inset-0 w-full h-full cursor-pointer"></canvas>
+        <span *ngIf="!signed" class="pointer-events-none opacity-20">Área para assinatura</span>
+      </div>
+
+      <div class="text-sm w-full text-center opacity-70">
+        Clicando em confirmar, aceito que esta é uma representação legal da minha assinatura.
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer dark:bg-slate-800 border-t dark:border-gray-700 flex justify-end">
+    <button type="button" [disabled]="!signed"
+      class="disabled:opacity-40 px-4 py-2 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-600 transition duration-300 ease-in-out active:scale-95"
+      (click)="clearSignature()">
+      <i class="fa-solid fa-eraser"></i> Limpar
+    </button>
+
+    <button type="button" [disabled]="!signed"
+      class="disabled:opacity-40 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition duration-300 ease-in-out active:scale-95"
+      (click)="saveSignature()">
+      <i class="fa-solid fa-check"></i> Confirmar
+    </button>
+
+    <button type="button"
+      class="px-4 py-2 bg-gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-gray-600 transition duration-300 ease-in-out active:scale-95"
+      (click)="modal.dismiss('Cancel click')">
+      <i class="fa-solid fa-xmark"></i> Cancelar
+    </button>
+  </div>
+</ng-template>
+
+
+

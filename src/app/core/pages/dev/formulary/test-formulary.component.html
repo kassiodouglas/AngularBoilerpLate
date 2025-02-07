@@ -1,0 +1,242 @@
+<div class="container mx-auto py-10 px-4">
+  <h1 class="text-4xl font-bold text-center" data-aos="fade-up">Documentação do Módulo Formulary</h1>
+  <dark-mode-button />
+
+  <section class="mt-10" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold">Visão Geral</h2>
+      <p>Este módulo fornece diversos componentes de formulários, incluindo entradas, validadores e utilitários para melhorar o manuseio de formulários em aplicações Angular.</p>
+  </section>
+
+  <section class="mt-10" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold">Componentes</h2>
+      <ul class="list-disc pl-5">
+          <li><strong>Datepickery</strong>: Um componente de seleção de data.</li>
+          <li><strong>Debugy</strong>: Ajuda a depurar os valores do formulário.</li>
+          <li><strong>Inputy</strong>: Componente de entrada personalizado.</li>
+          <li><strong>Selecty</strong>: Componente de seleção suspensa.</li>
+          <li><strong>Signatury</strong>: Campo para captura de assinatura.</li>
+          <li><strong>Switchy</strong>: Componente de alternância.</li>
+          <li><strong>Textareay</strong>: Área de texto personalizada.</li>
+      </ul>
+  </section>
+
+  <section class="mt-10" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold">Validação</h2>
+      <p>O módulo inclui vários validadores:</p>
+      <ul class="list-disc pl-5">
+          <li><strong>DateAfterNowValidator</strong>: Garante que a data seja posterior à data atual.</li>
+          <li><strong>ExactLengthValidator</strong>: Valida um comprimento exato de caracteres.</li>
+          <li><strong>OnlyLetters</strong>: Restringe a entrada para apenas letras.</li>
+          <li><strong>OnlyLettersNumbers</strong>: Permite apenas caracteres alfanuméricos.</li>
+          <li><strong>OnlyNumbers</strong>: Restringe a entrada para apenas números.</li>
+      </ul>
+  </section>
+
+  <section class="mt-10" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold">Como Usar</h2>
+      <p>Para utilizar este módulo em seu projeto Angular, importe o <code>FormularyModule</code> no seu módulo principal.</p>
+      <pre class="bg-gray-800 text-white p-4 rounded">
+import {{ '{' }} FormularyModule {{ '}' }} from './formulary/formulary.module';
+NgModule({{ '{' }}
+imports: [FormularyModule],
+{{ '}' }})
+export class AppModule {{ '}' }}
+      </pre>
+      <h3 class="text-xl font-semibold mt-6">Exemplo de Uso dos Componentes</h3>
+      <p>Você pode utilizar os componentes nos seus templates da seguinte maneira:</p>
+      <pre class="bg-gray-800 text-white p-4 rounded">
+&lt;inputy label="Nome" formControlName="nome"&gt;&lt;/inputy&gt;
+&lt;selecty label="Escolha uma opção" formControlName="opcao" [options]="[]"&gt;&lt;/selecty&gt;
+&lt;switchy label="Ativar" formControlName="ativo"&gt;&lt;/switchy&gt;
+&lt;textareay label="Descrição" formControlName="descricao"&gt;&lt;/textareay&gt;
+&lt;datepickery label="Data de Nascimento" formControlName="data"&gt;&lt;/datepickery&gt;
+      </pre>
+  </section>
+</div>
+
+
+<div class="container mx-auto py-10 px-4">
+
+  <h1 class="text-4xl font-bold text-center" data-aos="fade-up">Exemplos</h1>
+
+  <form [formGroup]="form" class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+    <div data-aos="fade-up">
+      <h1 class="mb-3 font-bold text-lg text-gray-700 dark:text-gray-200">Inputy</h1>
+      <div class="w-full max-w-lg grid gap-3">
+        <inputy
+          [loading]="loadingStates['input']"
+          [disabled]="disabledStates['input']"
+          [debug]="debugStates['input']"
+          controlName="input"
+          label="If has a big label in input. What happens?"
+          tooltip="This is a help text!"
+        />
+        <div class="flex space-x-2">
+          <button (click)="toggleLoading('input')" class="btn" [ngClass]="{'!bg-green-600':loadingStates['input']}">Toggle Loading</button>
+          <button (click)="toggleDisabled('input')" class="btn" [ngClass]="{'!bg-green-600':disabledStates['input']}">Toggle Disabled</button>
+          <button (click)="toggleDebug('input')" class="btn" [ngClass]="{'!bg-green-600':debugStates['input']}">Toggle Debug</button>
+        </div>
+      </div>
+    </div>
+
+    <div data-aos="fade-up">
+      <h1 class="mb-3 font-bold text-lg text-gray-700 dark:text-gray-200">Selecty</h1>
+      <div class="w-full max-w-lg grid gap-3">
+        <selecty
+          [loading]="loadingStates['select']"
+          [disabled]="disabledStates['select']"
+          [debug]="debugStates['select']"
+          controlName="select"
+          label="Modelo"
+          tooltip="This is a help text!"
+          [options]="selectyOptions"
+        />
+        <div class="flex space-x-2">
+          <button (click)="toggleLoading('select')" class="btn" [ngClass]="{'!bg-green-600':loadingStates['select']}">Toggle Loading</button>
+          <button (click)="toggleDisabled('select')" class="btn" [ngClass]="{'!bg-green-600':disabledStates['select']}">Toggle Disabled</button>
+          <button (click)="toggleDebug('select')" class="btn" [ngClass]="{'!bg-green-600':debugStates['select']}">Toggle Debug</button>
+
+        </div>
+      </div>
+    </div>
+
+    <div data-aos="fade-up">
+      <h1 class="mb-3 font-bold text-lg text-gray-700 dark:text-gray-200">Textareay</h1>
+      <div class="w-full max-w-lg grid gap-3">
+        <textareay
+          [loading]="loadingStates['textarea']"
+          [disabled]="disabledStates['textarea']"
+          [debug]="debugStates['textarea']"
+          controlName="textarea"
+          label="Observações"
+          tooltip="This is a help text!"
+        />
+        <div class="flex space-x-2">
+          <button (click)="toggleLoading('textarea')" class="btn" [ngClass]="{'!bg-green-600':loadingStates['textarea']}">Toggle Loading</button>
+          <button (click)="toggleDisabled('textarea')" class="btn" [ngClass]="{'!bg-green-600':disabledStates['textarea']}">Toggle Disabled</button>
+          <button (click)="toggleDebug('textarea')" class="btn" [ngClass]="{'!bg-green-600':debugStates['textarea']}">Toggle Debug</button>
+
+        </div>
+      </div>
+    </div>
+
+    <div data-aos="fade-up">
+      <h1 class="mb-3 font-bold text-lg text-gray-700 dark:text-gray-200">Datepickery</h1>
+      <div class="w-full max-w-lg grid gap-3">
+        <datepickery
+          [loading]="loadingStates['datepicker']"
+          [disabled]="disabledStates['datepicker']"
+          [debug]="debugStates['datepicker']"
+          controlName="datepicker"
+          label="Date"
+          tooltip="This is a help text!"
+        />
+        <div class="flex space-x-2">
+          <button (click)="toggleLoading('datepicker')" class="btn" [ngClass]="{'!bg-green-600':loadingStates['datepicker']}">Toggle Loading</button>
+          <button (click)="toggleDisabled('datepicker')" class="btn" [ngClass]="{'!bg-green-600':disabledStates['datepicker']}">Toggle Disabled</button>
+          <button (click)="toggleDebug('datepicker')" class="btn" [ngClass]="{'!bg-green-600':debugStates['datepicker']}">Toggle Debug</button>
+
+        </div>
+      </div>
+    </div>
+
+    <div data-aos="fade-up">
+      <h1 class="mb-3 font-bold text-lg text-gray-700 dark:text-gray-200">Datepickery +Time</h1>
+      <div class="w-full max-w-lg grid gap-3">
+        <datepickery
+          [loading]="loadingStates['datetimepicker']"
+          [disabled]="disabledStates['datetimepicker']"
+          [debug]="debugStates['datetimepicker']"
+          controlName="datetimepicker"
+          label="Datetime"
+          tooltip="This is a help text!"
+          [time]="true"
+          [timePeriodMin]="15"
+        />
+        <div class="flex space-x-2">
+          <button (click)="toggleLoading('datetimepicker')" class="btn" [ngClass]="{'!bg-green-600':loadingStates['datetimepicker']}">Toggle Loading</button>
+          <button (click)="toggleDisabled('datetimepicker')" class="btn" [ngClass]="{'!bg-green-600':disabledStates['datetimepicker']}">Toggle Disabled</button>
+          <button (click)="toggleDebug('datetimepicker')" class="btn" [ngClass]="{'!bg-green-600':debugStates['datetimepicker']}">Toggle Debug</button>
+        </div>
+      </div>
+    </div>
+
+    <div data-aos="fade-up">
+      <h1 class="mb-3 font-bold text-lg text-gray-700 dark:text-gray-200">Signatury</h1>
+      <div class="w-full max-w-lg grid gap-3">
+        <signatury
+          [loading]="loadingStates['signature']"
+          [disabled]="disabledStates['signature']"
+          [debug]="debugStates['signature']"
+          controlName="signature"
+          label="Signature"
+          tooltip="This is a help text!"
+          />
+          <div class="flex space-x-2">
+            <button (click)="toggleLoading('signature')" class="btn" [ngClass]="{'!bg-green-600':loadingStates['signature']}">Toggle Loading</button>
+            <button (click)="toggleDisabled('signature')" class="btn" [ngClass]="{'!bg-green-600':disabledStates['signature']}">Toggle Disabled</button>
+            <button (click)="toggleDebug('signature')" class="btn" [ngClass]="{'!bg-green-600':debugStates['signature']}">Toggle Debug</button>
+
+          </div>
+      </div>
+    </div>
+
+    <div data-aos="fade-up">
+      <h1 class="mb-3 font-bold text-lg text-gray-700 dark:text-gray-200">Optiony</h1>
+      <div class="w-full max-w-lg grid gap-3">
+        em dev...
+      </div>
+    </div>
+
+    <div data-aos="fade-up">
+      <h1 class="mb-3 font-bold text-lg text-gray-700 dark:text-gray-200">Switchy</h1>
+      <div class="w-full max-w-lg grid gap-3">
+        <switchy
+          [loading]="loadingStates['switch']"
+          [disabled]="disabledStates['switch']"
+          [debug]="debugStates['switch']"
+          label="Tem Estepe?"
+          controlName="switch"
+          tooltip="This is a help text!"
+        />
+        <div class="flex space-x-2">
+          <button (click)="toggleLoading('switch')" class="btn" [ngClass]="{'!bg-green-600':loadingStates['switch']}">Toggle Loading</button>
+          <button (click)="toggleDisabled('switch')" class="btn" [ngClass]="{'!bg-green-600':disabledStates['switch']}">Toggle Disabled</button>
+          <button (click)="toggleDebug('switch')" class="btn" [ngClass]="{'!bg-green-600':debugStates['switch']}">Toggle Debug</button>
+        </div>
+      </div>
+    </div>
+
+    <div data-aos="fade-up">
+      <h1 class="mb-3 font-bold text-lg text-gray-700 dark:text-gray-200">Inputy (password)</h1>
+      <div class="w-full max-w-lg grid gap-3">
+        <inputy
+          [loading]="loadingStates['inputPassword']"
+          [disabled]="disabledStates['inputPassword']"
+          [debug]="debugStates['inputPassword']"
+          controlName="inputPassword"
+          label="If has a big label in input. What happens?"
+          tooltip="This is a help text!"
+          type="password"
+        />
+        <div class="flex space-x-2">
+          <button (click)="toggleLoading('inputPassword')" class="btn" [ngClass]="{'!bg-green-600':loadingStates['inputPassword']}">Toggle Loading</button>
+          <button (click)="toggleDisabled('inputPassword')" class="btn" [ngClass]="{'!bg-green-600':disabledStates['inputPassword']}">Toggle Disabled</button>
+          <button (click)="toggleDebug('inputPassword')" class="btn" [ngClass]="{'!bg-green-600':debugStates['inputPassword']}">Toggle Debug</button>
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+  <div class="grid grid-cols-1 p-6 my-1 rounded-lg" data-aos="fade-up">
+    <h1 class="mb-3 font-bold text-lg text-gray-700 dark:text-gray-200">Form Data</h1>
+    <div class="w-full max-w-lg bg-gray-100 dark:bg-gray-900 p-4 rounded-lg shadow-md">
+      <pre class="text-gray-800 dark:text-gray-300">{{ form.value | json }}</pre>
+    </div>
+  </div>
+
+</div>
+
+
+
