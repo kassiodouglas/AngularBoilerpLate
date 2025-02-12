@@ -47,13 +47,11 @@ export class TestFormularyComponent implements OnInit {
     inputMaskedCpf:false,
   };
 
-  selectyOptions = [
-    {value:"value1", label:"Opção 1"},
-    {value:"value2", label:"Opção 2"},
-    {value:"value3", label:"Opção 3"},
-    {value:"value4", label:"Opção 4"},
-    {value:"value5", label:"Opção 5"},
-  ];
+  selectyOptions = Array.from({ length: 5000 }, (_, i) => ({
+    value: {value: i + 1, name:'MARIA'},
+    label: `Opção ${i + 1}`,
+    optionLabel: `Opção ${i + 1}  <br> <small class='opacity-80 text-green-600'>sub x${i}</small>`,
+  }));
 
   swtichyLabelBase = 'Tem Estepe?'
   swtichyLabel = 'Tem Estepe?'

@@ -12,6 +12,7 @@ import { DebugyComponent } from './components/debugy/debugy.component';
 import { SignaturyComponent } from './components/signatury/signatury.component';
 import { SwitchyComponent } from './components/switchy/switchy.component';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     SwitchyComponent,
 
   ],
-  imports: [CommonModule, NgbTooltipModule, FormsModule, NgxMaskDirective,
+  imports: [CommonModule, NgbTooltipModule, FormsModule, NgxMaskDirective, ScrollingModule,
     NgxMaskPipe],
   providers: [FormularyService, provideNgxMask()],
   exports: [
