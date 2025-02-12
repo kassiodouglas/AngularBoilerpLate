@@ -1,6 +1,6 @@
 import { DarkModeService } from '../../../../services/dark-mode.service';
 import { FormularyService } from '../../services/formulary.service';
-import { Component, Host, Input, OnInit, Optional, SimpleChanges, SkipSelf } from '@angular/core';
+import { Component, EventEmitter, Host, Input, OnInit, Optional, Output, SimpleChanges, SkipSelf } from '@angular/core';
 import { ControlContainer, FormGroup } from '@angular/forms';
 import { FormControlLabeled } from '../validation/FormControlLabeled';
 
@@ -17,6 +17,7 @@ export class SwitchyComponent implements OnInit {
   @Input() disabled: boolean = false;
   @Input() loading: boolean = false;
   @Input() debug: boolean = false;
+  @Output() onChecked: EventEmitter<boolean> = new EventEmitter();
 
   id!: string;
   loaderId!: string;
@@ -60,8 +61,6 @@ export class SwitchyComponent implements OnInit {
     left-12
     z-10
     origin-[0]
-    dark:bg-slate-800
-    bg-slate-50
     px-2
     peer-focus:px-2
     peer-focus:text-blue-600
@@ -74,7 +73,7 @@ export class SwitchyComponent implements OnInit {
     peer-focus:-translate-y-4
     rtl:peer-focus:translate-x-1/4
     rtl:peer-focus:left-auto
-    start-1
+    start-16
     `;
 
   classLabelCheckbox = `
@@ -176,6 +175,7 @@ export class SwitchyComponent implements OnInit {
 
   toggleChecked(){
     this.value = !this.value;
+    this.onChecked.emit(this.value)
   }
 
   get formGroup() {

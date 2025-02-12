@@ -8,7 +8,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve": "ng serve --configuration development --host 0.0.0.0  --port 3000",
-
     "g-component": "node src/commands/generate.js --path=components",
     "g-guard": "node src/commands/generate.js --path=guards",
     "g-interceptor": "node src/commands/generate.js --path=interceptors",
@@ -19,7 +18,6 @@
     "g-pipe": "node src/commands/generate.js --path=pipes",
     "g-directive": "node src/commands/generate.js --path=directives",
     "g-model": "node src/commands/generate.js --path=models"
-
   },
   "private": true,
   "dependencies": {
@@ -39,6 +37,7 @@
     "aos": "^2.3.4",
     "bootstrap": "^5.3.3",
     "moment": "^2.30.1",
+    "ngx-mask": "^19.0.6",
     "notiflix": "^3.2.7",
     "rxjs": "~7.8.0",
     "signature_pad": "^5.0.4",

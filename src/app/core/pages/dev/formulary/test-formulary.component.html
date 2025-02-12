@@ -59,7 +59,7 @@ export class AppModule {{ '}' }}
 
   <h1 class="text-4xl font-bold text-center" data-aos="fade-up">Exemplos</h1>
 
-  <form [formGroup]="form" class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+  <form [formGroup]="form" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:p-6">
     <div data-aos="fade-up">
       <h1 class="mb-3 font-bold text-lg text-gray-700 dark:text-gray-200">Inputy</h1>
       <div class="w-full max-w-lg grid gap-3">
@@ -195,9 +195,10 @@ export class AppModule {{ '}' }}
           [loading]="loadingStates['switch']"
           [disabled]="disabledStates['switch']"
           [debug]="debugStates['switch']"
-          label="Tem Estepe?"
+          [label]="swtichyLabel"
           controlName="switch"
           tooltip="This is a help text!"
+          (onChecked)="changeLabelSwith($event)"
         />
         <div class="flex space-x-2">
           <button (click)="toggleLoading('switch')" class="btn" [ngClass]="{'!bg-green-600':loadingStates['switch']}">Toggle Loading</button>
@@ -223,6 +224,26 @@ export class AppModule {{ '}' }}
           <button (click)="toggleLoading('inputPassword')" class="btn" [ngClass]="{'!bg-green-600':loadingStates['inputPassword']}">Toggle Loading</button>
           <button (click)="toggleDisabled('inputPassword')" class="btn" [ngClass]="{'!bg-green-600':disabledStates['inputPassword']}">Toggle Disabled</button>
           <button (click)="toggleDebug('inputPassword')" class="btn" [ngClass]="{'!bg-green-600':debugStates['inputPassword']}">Toggle Debug</button>
+        </div>
+      </div>
+    </div>
+
+    <div data-aos="fade-up">
+      <h1 class="mb-3 font-bold text-lg text-gray-700 dark:text-gray-200">Inputy (masked)</h1>
+      <div class="w-full max-w-lg grid gap-3">
+        <inputy
+          [loading]="loadingStates['inputMaskedCpf']"
+          [disabled]="disabledStates['inputMaskedCpf']"
+          [debug]="debugStates['inputMaskedCpf']"
+          controlName="inputMaskedCpf"
+          label="If has a big label in input. What happens?"
+          tooltip="This is a help text!"
+          maskInputy="money"
+        />
+        <div class="flex space-x-2">
+          <button (click)="toggleLoading('inputMaskedCpf')" class="btn" [ngClass]="{'!bg-green-600':loadingStates['inputMaskedCpf']}">Toggle Loading</button>
+          <button (click)="toggleDisabled('inputMaskedCpf')" class="btn" [ngClass]="{'!bg-green-600':disabledStates['inputMaskedCpf']}">Toggle Disabled</button>
+          <button (click)="toggleDebug('inputMaskedCpf')" class="btn" [ngClass]="{'!bg-green-600':debugStates['inputMaskedCpf']}">Toggle Debug</button>
         </div>
       </div>
     </div>

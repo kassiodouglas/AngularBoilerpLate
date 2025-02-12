@@ -8,8 +8,9 @@
 
 <div class="!min-h-[50px] rounded-md" [id]="loaderId">
   <div class="relative" [ngbTooltip]="tipContent" [openDelay]="1000">
+
     <input (blur)="setTouched()" [disabled]="disabled" [type]="type" [id]="id" [class]="classInput" placeholder=" "
-      [(ngModel)]="value"
+      [(ngModel)]="value" [mask]="mask" [prefix]="prefix" [suffix]="suffix" [thousandSeparator]="thousandSeparator"
       [ngClass]="{'!border-red-500':hasErrors,'!border-orange-400':!control||!formGroup,'!border-green-400':control?.valid && control?.touched}" />
 
     @if(initialType === 'password'){

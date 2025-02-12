@@ -17,11 +17,15 @@ export class InputyComponent implements OnInit {
   @Input() disabled: boolean = false;
   @Input() loading: boolean = false;
   @Input() debug: boolean = false;
+  @Input() maskInputy!: 'money' | 'cpf' | 'cnpj' | 'phone' | 'rg' | 'date' | 'datetime' | 'cep' | 'credit-card' | 'time'| 'percent'|'ip';
 
   id!: string;
   loaderId!: string;
   hasErrors: boolean = false;
   initialType: string = 'text';
+  prefix: string = '';
+  suffix: string = '';
+  thousandSeparator:string = ''
 
   classInput = `
     disabled:cursor-not-allowed
@@ -142,8 +146,38 @@ export class InputyComponent implements OnInit {
     return this.control?.value ?? null;
   }
 
-  get valueMasked() {
-    return null;
+  get mask(): string {
+    switch (this.maskInputy) {
+      case 'cpf':
+        return '000.000.000-00';
+      case 'cnpj':
+        return '00.000.000/0000-00';
+      case 'money':
+        this.prefix = 'R$ ';
+        this.thousandSeparator = ''
+        return 'separator.2';
+      case 'phone':
+        return '(00) 0000 0000||(00) 00000 0000';
+      case 'rg':
+        return '00.000.000-0';
+      case 'date':
+        return '00/00/0000';
+      case 'datetime':
+        return '00/00/0000 00:00';
+      case 'cep':
+        return '00000-000';
+      case 'credit-card':
+        return '0000 0000 0000 0000';
+      case 'time':
+        return '00:00:00';
+      case 'percent':
+        this.suffix = '%'
+        return 'separator.2';
+      case 'ip':
+        return '000.000.000.000';
+      default:
+        return '';
+    }
   }
 
 }

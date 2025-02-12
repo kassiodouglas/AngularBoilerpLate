@@ -11,6 +11,7 @@ import { DatepickeryComponent } from './components/datepickery/datepickery.compo
 import { DebugyComponent } from './components/debugy/debugy.component';
 import { SignaturyComponent } from './components/signatury/signatury.component';
 import { SwitchyComponent } from './components/switchy/switchy.component';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -21,17 +22,19 @@ import { SwitchyComponent } from './components/switchy/switchy.component';
     ValidationComponent,
     DebugyComponent,
     SignaturyComponent,
-    SwitchyComponent
+    SwitchyComponent,
+
   ],
-  imports: [CommonModule, NgbTooltipModule, FormsModule],
-  providers: [FormularyService],
+  imports: [CommonModule, NgbTooltipModule, FormsModule, NgxMaskDirective,
+    NgxMaskPipe],
+  providers: [FormularyService, provideNgxMask()],
   exports: [
     InputyComponent,
     SelectyComponent,
     TextareayComponent,
     DatepickeryComponent,
     SignaturyComponent,
-    SwitchyComponent
+    SwitchyComponent,
   ],
 })
-export class FormularyModule {}
+export class FormularyModule { }

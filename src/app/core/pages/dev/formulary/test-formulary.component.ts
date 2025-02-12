@@ -20,6 +20,7 @@ export class TestFormularyComponent implements OnInit {
     datepicker: false,
     signature: false,
     switch:false,
+    inputMaskedCpf:false,
   };
 
   disabledStates: Record<string, boolean> = {
@@ -31,6 +32,7 @@ export class TestFormularyComponent implements OnInit {
     signature: false,
     datetimepicker: false,
     switch:false,
+    inputMaskedCpf:false,
   };
 
   debugStates: Record<string, boolean> = {
@@ -42,6 +44,7 @@ export class TestFormularyComponent implements OnInit {
     signature: false,
     datetimepicker: false,
     switch:false,
+    inputMaskedCpf:false,
   };
 
   selectyOptions = [
@@ -51,6 +54,9 @@ export class TestFormularyComponent implements OnInit {
     {value:"value4", label:"Opção 4"},
     {value:"value5", label:"Opção 5"},
   ];
+
+  swtichyLabelBase = 'Tem Estepe?'
+  swtichyLabel = 'Tem Estepe?'
 
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
@@ -62,6 +68,7 @@ export class TestFormularyComponent implements OnInit {
       datetimepicker: new FormControlLabeled('datetimepicker Label', '', [Validators.required]),
       signature: new FormControlLabeled('Signature Label', '', [Validators.required]),
       switch: new FormControlLabeled('Switch Label', '', []),
+      inputMaskedCpf: new FormControlLabeled('Input Masked CPF', '', [Validators.required]),
     });
   }
 
@@ -80,6 +87,10 @@ export class TestFormularyComponent implements OnInit {
 
   toggleDebug(field: keyof typeof this.debugStates) {
     this.debugStates[field] = !this.debugStates[field];
+  }
+
+  changeLabelSwith(e:boolean){
+    this.swtichyLabel = e ? this.swtichyLabelBase + ' SIM!' : this.swtichyLabelBase + ' NÃO!';
   }
 
 
