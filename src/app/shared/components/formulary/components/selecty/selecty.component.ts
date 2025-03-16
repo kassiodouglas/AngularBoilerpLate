@@ -31,7 +31,7 @@ export class SelectyComponent implements OnInit, OnChanges {
   showOptions: boolean = false; // Controla a visibilidade da lista de opções
   activeIndex: number = -1;
 
-  classInput = "dark:hover:border-blue-400 hover:border-blue-500 cursor-pointer disabled:cursor-not-allowed disabled:opacity-50 bg-slate-50 dark:bg-slate-800 block px-2.5 pb-2.5 pt-2 w-full md:text-sm text-gray-900 rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer";
+  classInput = "focus:border-2 focus:border-purple-500 dark:hover:border-blue-400 hover:border-blue-500 cursor-pointer disabled:cursor-not-allowed disabled:opacity-50 bg-slate-50 dark:bg-slate-800 block px-2.5 pb-2.5 pt-2 w-full md:text-sm text-gray-900 rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer";
   classLabel = "truncate ... max-w-[calc(100%-5px)] rounded-md absolute md:text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-85 top-2 z-10 origin-[0] dark:bg-slate-800 bg-slate-50 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-95 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1";
 
   constructor(
@@ -43,6 +43,9 @@ export class SelectyComponent implements OnInit, OnChanges {
     this.setId();
     this.observeSetValue();
     this.filteredOptions = [...this.options]; // Inicializa com todas as opções
+
+    if(this.value)
+      this.searchQuery = this.value.label;
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -163,7 +166,7 @@ export class SelectyComponent implements OnInit, OnChanges {
   }
 
   selectOption(option: { value: any, label: string }) {
-    this.value = option.value;
+    this.value = option;
     this.searchQuery = option.label;
     this.showOptions = false;
     this.activeIndex = -1;

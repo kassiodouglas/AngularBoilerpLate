@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { SidebarService } from './components/sidebar/sidebar.service';
-import { SidebarLinkComponent } from './components/sidebar/sidebar-link/sidebar-link.component';
 import { RouterModule } from '@angular/router';
 import { FormularyModule } from './components/formulary/formulary.module';
 import { InputyComponent } from './components/formulary/components/inputy/inputy.component';
@@ -13,17 +10,40 @@ import { FormularyService } from './components/formulary/services/formulary.serv
 import { DatepickeryComponent } from './components/formulary/components/datepickery/datepickery.component';
 import { SignaturyComponent } from './components/formulary/components/signatury/signatury.component';
 import { SwitchyComponent } from './components/formulary/components/switchy/switchy.component';
+import { BreadcumbComponent } from './components/breadcumb/breadcumb.component';
+import { PageTitleComponent } from './components/page-title/page-title.component';
+import { TablyModule } from './components/tably/tably.module';
+import { LayoutComponent } from './components/layout/layout.component';
+import { LayoutSidebarLinkComponent } from './components/layout/sidebar-link/sidebar-link.component';
 
 @NgModule({
   imports: [
-    CommonModule, RouterModule, FormularyModule
+    CommonModule,
+    RouterModule,
+    FormularyModule,
+    TablyModule
   ],
-  declarations: [SidebarComponent, SidebarLinkComponent, DarkModeButtonComponent],
+  declarations: [
+    LayoutSidebarLinkComponent,
+    DarkModeButtonComponent,
+    BreadcumbComponent,
+    PageTitleComponent,
+    LayoutComponent,
+  ],
   exports: [
-    SidebarComponent, DarkModeButtonComponent, InputyComponent, SelectyComponent, TextareayComponent, DatepickeryComponent, SignaturyComponent, SwitchyComponent
+    DarkModeButtonComponent,
+    InputyComponent,
+    SelectyComponent,
+    TextareayComponent,
+    DatepickeryComponent,
+    SignaturyComponent,
+    SwitchyComponent,
+    BreadcumbComponent,
+    PageTitleComponent,
+    TablyModule
   ],
   providers: [
-    SidebarService, FormularyService
+    FormularyService
   ]
 })
 export class SharedModule { }

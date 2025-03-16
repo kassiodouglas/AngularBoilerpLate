@@ -1,0 +1,118 @@
+<!-- checkbox -->
+<ng-template #checkbox>
+  <div class="flex items-center cursor-pointer mx-2 ps-1">
+    <input type="checkbox" class="checkbox" [checked]="checked" (change)="onCheckboxChange($event)">
+  </div>
+</ng-template>
+
+
+<!-- search -->
+<form [formGroup]="formSearch" (ngSubmit)="submitSearchForm()" class="flex flex-row mt-2 mb-1">
+
+  <div>
+    <inputy label="Pesquisar" type="search" controlName="search" class="rounded-e-md"/>
+  </div>
+
+  <div class="mx-2">
+    <button class="px-3 py-2 bg-primary-800 rounded-s hover:bg-primary-600" type="submit"> <i class="fa-solid fa-magnifying-glass"></i> </button>
+    <button class="px-3 py-2 bg-primary-800 rounded-e hover:bg-primary-600" type="button" (click)="cleanSearch()"> <i class="fa-solid fa-broom"></i> </button>
+  </div>
+
+</form>
+
+
+<!-- table -->
+<div class="flex flex-col h-full dark:bg-secondary-700 rounded-md border-l border-r dark:border-slate-600">
+
+  <!-- header -->
+  <div class="p-1 w-full rounded-t-md flex items-center dark:bg-slate-600">
+    <div class="grid w-full items-center py-1" [ngClass]="headerGridColsClass">
+
+      @for (col of header; track $index; let isFirst = $first) {
+        <div class="flex flex-row items-center py-1">
+
+          @if(isFirst && selectRows){
+          <ng-container *ngTemplateOutlet="checkbox"></ng-container>
+          }
+
+          <div class="text-xs hover:bg-gray-500 transition-all rounded-md px-2 py-1 flex flex-row items-center truncate ...">
+            @if(col.searcheable){
+              <div class="text-xs p-1 flex justify-center items-center opacity-50">
+                <i class="fa-solid fa-magnifying-glass text-primary-400"></i>
+              </div>
+            }
+
+            {{col.label}}
+
+            <div class="flex flex-row ms-1">
+              @if(col.ordenable){
+                <button (click)="orderBy(col)" class="text-xs rounded-md p-2 px-3 hover:bg-secondary-800 cursor-pointer transition-all w-5 h-5 flex justify-center items-center">
+                  @switch (col.direction) {
+                    @case ("") {<i class="fa-solid fa-sort mx-2 text-xs"></i>}
+                    @case ("ASC") {<i class="fa-solid fa-sort-up"></i>}
+                    @case ("DESC") {<i class="fa-solid fa-sort-down"></i>}
+                  }
+                </button>
+              }
+
+            </div>
+          </div>
+
+        </div>
+      }
+
+    </div>
+  </div>
+
+  <!-- rows -->
+  <li-virtual-scroll [items]="rows" [scrollDebounceMs]="100" class="w-full my-1 flex-col overflow-x-hidden overflow-y-auto">
+
+      <tably-row
+        *liVirtualItem="let row"
+        [header]="header"
+        [row]="row"
+        [selectRows]="selectRows"
+        [headerGridColsClass]="headerGridColsClass"
+        [screenSize]="screenSize"
+        (onChecked)="checkRow($event, row)"
+        (onEdit)="emitRowEdit($event)"
+        (onBlock)="emitRowBlock($event)"
+        (onExport)="emitRowExport($event)"
+      />
+
+  </li-virtual-scroll >
+
+  @if(rows.length == 0){
+    <div class="text-lg font-bold col-span-full text-center p-10">Nenhum registro a exibir</div>
+  }
+
+</div>
+
+
+<!-- selected options -->
+@if(interactedCheckbox){
+<div class="flex justify-start absolute ml-16 bottom-5 w-screen opacity-70 hover:opacity-100">
+    <div [ngClass]="{'animate__fadeInUp':totalSelected>0, 'animate__fadeOutDown':totalSelected==0}" class="selecteds-menu animate__animated animate__faster">
+
+      <div class="p-2 px-3"><i class="fa-solid fa-square-check"></i> {{totalSelected}}</div>
+
+      <div class="hover:bg-gray-800 p-2 px-3 cursor-pointer rounded-md" (click)="emitSelectedRowsExport()"><i class="fa-solid fa-file-arrow-down"></i></div>
+
+      <div class="hover:bg-gray-800 p-2 px-3 cursor-pointer rounded-md" (click)="emitSelectedRowsBlock()"><i class="fa-solid fa-trash-can"></i></div>
+
+    </div>
+</div>
+}
+
+
+<!-- debug -->
+@if(debug){
+  <div class="bg-orange-400">
+    DEBUG!!!<br>
+    <small>header: {{header | json}}</small><br>
+    <pre>
+      <small>rows: {{rows | json}}</small><br>
+    </pre>
+    <small>headerGridColsClass: {{headerGridColsClass}}</small><br>
+  </div>
+}

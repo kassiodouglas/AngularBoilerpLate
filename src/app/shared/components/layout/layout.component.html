@@ -1,0 +1,51 @@
+<div class="screen">
+  <!-- Sidebar -->
+  <div
+    class="sidebar"
+    [class.-translate-x-full]="!isOpen"
+  >
+    <div class="flex flex-col h-full p-4">
+      <!-- Avatar e informações -->
+      <div class="flex flex-col items-center">
+        <div
+          class="avatar"
+          [style.background-image]="'url(https://img.freepik.com/fotos-gratis/retrato-de-homem-branco-isolado_53876-40306.jpg)'">
+        </div>
+
+        <div>
+          <div class="font-semibold text-lg truncate w-[170px]">
+            Alberto Roberto Gomes Da Silva
+          </div>
+          <div class="text-sm opacity-55 truncate w-[170px]">
+            alberto.roberto&#64;litwo.com.br
+          </div>
+        </div>
+      </div>
+
+      <div class="border-b border-gray-800 w-full my-3"></div>
+
+      <!-- Links -->
+      <div>
+        @for (link of links; track link) {
+          <sidebar-link [link]="link"/>
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- Botão de Toggle (sempre na esquerda) -->
+  <div
+    class="btn-toggle"
+    (click)="toggleSidebar()"
+  >
+    <i class="fa-solid fa-chevron-left transition-all duration-300" [ngClass]="isOpen ? 'rotate-0' : 'rotate-180'"></i>
+  </div>
+
+  <!-- Conteúdo Principal -->
+  <div
+    class="content"
+    [class.ml-64]="isOpen"
+  >
+    <router-outlet></router-outlet>
+  </div>
+</div>

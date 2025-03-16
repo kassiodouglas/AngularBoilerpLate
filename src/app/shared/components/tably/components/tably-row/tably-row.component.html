@@ -1,0 +1,49 @@
+<!-- checkbox -->
+<ng-template #checkbox let-checked="checked">
+  <div class="flex items-center cursor-pointer mx-3">
+    <input type="checkbox" class="checkbox" [checked]="checked" (change)="onCheckboxChange($event)"/>
+  </div>
+</ng-template>
+
+<!-- menu de ações -->
+<ng-template #actions let-row="row">
+<div class="relative inline-block ">
+  <div class="hover:bg-slate-500 rounded-md px-3 p-1 cursor-pointer me-1" (click)="toogleMenuActions($event)">
+    <i class="fa-solid fa-ellipsis"></i>
+  </div>
+
+  <!-- Menu suspenso -->
+  <div #menuAction [id]="'menuaction-'+row.index" class="fixed m-5 right-0 mt-2 w-48 dark:bg-bg-dark rounded-md shadow-md shadow-black z-50 animate__animated animate__faster" [ngClass]="{'hidden':!openedMenuActions,'animate__fadeIn':openedMenuActions}">
+    <ul class="py-2 text-sm text-gray-700">
+      <li class="px-4 py-2 text-secondary-200 hover:bg-secondary-900 cursor-pointer" (click)="onClickEdit(row)"><i class="fa-solid fa-pen-to-square"></i> Ver / Editar</li>
+      <li class="px-4 py-2 text-secondary-200 hover:bg-secondary-900 cursor-pointer" (click)="onClickBlock(row)"><i class="fa-solid fa-trash-can"></i> Inativar</li>
+      <li class="px-4 py-2 text-secondary-200 hover:bg-secondary-900 cursor-pointer" (click)="onClickExport(row)"><i class="fa-solid fa-file-arrow-down"></i> Exportar</li>
+    </ul>
+  </div>
+
+</div>
+</ng-template>
+
+<!-- row -->
+<div class="grid w-full items-center bg-bg-dark hover:bg-gray-900 transition-all border-b dark:border-secondary-800 py-2" [class]="headerGridColsClass" [ngClass]="{'bg-secondary-600':row.checked}">
+  @for (col of header; track $index; let isFirst = $first; let isLast = $last)  {
+
+    <div class="flex flex-row items-center relative" [ngClass]="{'justify-between':isLast}">
+
+      @if(isFirst && selectRows){
+        <ng-container
+          *ngTemplateOutlet="checkbox; context: { checked: row.checked }">
+        </ng-container>
+      }
+
+      <div class="text-xs truncate ..." [innerHTML]="label(row, col)"></div>
+
+      @if(isLast){
+        <ng-container
+          *ngTemplateOutlet="actions; context: { row: row }">
+        </ng-container>
+      }
+
+    </div>
+  }
+</div>

@@ -1,0 +1,30 @@
+.checkbox{
+  @apply
+    rounded-md
+    cursor-pointer
+    w-5
+    h-5
+    text-blue-600
+    bg-gray-100
+    border-gray-300
+    focus:ring-blue-500
+    dark:focus:ring-blue-600
+    dark:ring-offset-gray-800
+    focus:ring-2
+    dark:bg-gray-700
+    dark:border-gray-600
+}
+
+.selecteds-menu{
+  @apply
+    bg-slate-600
+    p-1
+    rounded-md
+    w-auto
+    items-center
+    flex
+    flex-row
+    space-x-2
+    shadow-lg
+    shadow-gray-950
+}

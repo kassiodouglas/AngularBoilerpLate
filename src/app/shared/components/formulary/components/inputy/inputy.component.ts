@@ -28,6 +28,7 @@ export class InputyComponent implements OnInit {
   thousandSeparator:string = ''
 
   classInput = `
+    focus:border-2 focus:border-purple-500
     disabled:cursor-not-allowed
     disabled:opacity-50
     px-2.5

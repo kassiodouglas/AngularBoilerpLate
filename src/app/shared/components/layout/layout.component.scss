@@ -1,0 +1,74 @@
+.screen{
+  @apply
+  bg-bg-light
+    dark:bg-bg-dark
+    w-screen
+    h-screen
+    justify-between
+    flex
+    overflow-hidden
+}
+
+.sidebar{
+  @apply
+    w-[280px]
+    max-w-[280px]
+  bg-bg-light
+  dark:bg-gray-900
+    p-7
+    h-screen
+    fixed
+    left-0
+    top-0
+    bottom-0
+    transition-transform
+    duration-300
+    z-10
+}
+
+.btn-toggle{
+  @apply
+    fixed
+    left-0
+    top-1/2
+    transform
+    -translate-y-1/2
+  bg-gray-800
+   text-white
+    opacity-65
+    hover:opacity-100
+    p-1
+    py-3
+    rounded-r
+    cursor-pointer
+    z-20
+    transition-all
+    duration-300
+}
+
+.avatar{
+  @apply
+    rounded-full
+    w-[40px]
+    h-[40px]
+    bg-cover
+    bg-center
+    m-2
+    border
+    border-slate-100
+    shadow-md
+    shadow-black
+}
+
+.content{
+  @apply
+    w-full
+    p-6
+    px-10
+    flex-1
+    transition-all
+    min-h-screen
+    duration-300
+}
+
+

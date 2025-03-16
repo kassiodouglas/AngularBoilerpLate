@@ -1,0 +1,8 @@
+@if(!separator){
+  <div [routerLink]="'/'+link.link" routerLinkActive="bg-slate-800"  [routerLinkActiveOptions]="{exact: true}" rou class="flex justify-start mb-1 text-gray-400 hover:text-gray-300 hover:font-bold transition-all cursor-pointer hover:bg-slate-800 rounded-md p-2">
+    <div class="me-2 text-sm" [innerHTML]="link.icon"></div>
+    <span class="text-sm">{{ link.label }}</span>
+  </div>
+}@else{
+  <div class="border-b border-gray-800 w-full my-3"></div>
+}

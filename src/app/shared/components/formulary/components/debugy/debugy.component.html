@@ -2,7 +2,7 @@
   <small class="p-3">
     <span class="text-sm font-bold text-orange-700">Debug: {{label}}</span>
     <div class="ps-3 text-orange-500 truncate ... max-w-[300px]">
-      Value: {{control?.value}}
+      Value: {{control?.value | json}}
     </div>
     <div class="ps-3 text-orange-500">
       Disabled: {{control?.disabled}}

@@ -1,0 +1,15 @@
+<div class="opacity-30 flex justify-start items-center my-3 text-sm font-thin">
+
+  <div class="">
+    <i class="fa-solid fa-house"></i>
+  </div>
+
+  @for (breadcumb of breadcumbs; track breadcumb) {
+    <div class="mx-2">
+      <i class="fa-solid fa-chevron-right"></i>
+    </div>
+
+    {{breadcumb}}
+  }
+
+</div>

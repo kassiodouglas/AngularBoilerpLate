@@ -75,6 +75,17 @@
                   "with": "src/environments/environment.test.ts"
                 }
               ]
+            },
+            "mock": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.mock.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -87,6 +98,9 @@
             },
             "development": {
               "buildTarget": "boilerplate:build:development"
+            },
+            "mock": {
+              "buildTarget": "boilerplate:build:mock"
             }
           },
           "defaultConfiguration": "development"
