@@ -12,7 +12,7 @@
     <textarea
       (blur)="setTouched()" [disabled]="disabled" rows="1"
       [id]="id" [class]="classInput" placeholder=" " rows="1" [(ngModel)]="value"
-      [ngClass]="{'!border-red-500':hasErrors,'!border-orange-400':!control||!formGroup,'!border-green-400':control?.valid && control?.touched}"
+      [ngClass]="{'!border-red-500':hasErrors,'!border-orange-400':!control||!formGroup,'!border-green-400':control.valid && control.touched}"
       ></textarea>
 
     <label [for]="id" [class]="classLabel" [ngClass]="{'opacity-40 bg-transparent cursor-not-allowed':disabled}">
