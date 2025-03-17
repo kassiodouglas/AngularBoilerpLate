@@ -1,4 +1,5 @@
-## Boilerplate Angular 19  V1.0.0
+
+## Boilerplate Angular 19 V1.0.0
 
 # Instalar
 
@@ -12,45 +13,83 @@ npm i
 # Bibliotecas Usadas Neste Projeto
 Abaixo está uma lista das principais bibliotecas utilizadas neste projeto, juntamente com suas descrições e casos de uso.
 
-1. <b>@fortawesome/angular-fontawesome</b>
-- Versão: ^0.15.0
-
-  Essa biblioteca fornece uma integração do Font Awesome com Angular, facilitando a adição de ícones vetoriais escaláveis e logotipos sociais em aplicativos Angular.
-  Caso de Uso: Adicionar ícones dinâmicos, personalizáveis e interativos ao aplicativo, utilizando a ampla biblioteca do Font Awesome.
-
-2. <b>@fortawesome/fontawesome-free</b>
+1. <b>@fortawesome/fontawesome-free</b>
 - Versão: ^6.6.0
 
   O Font Awesome Free inclui milhares de ícones em três estilos: sólido, regular e marcas. Ele funciona perfeitamente com a biblioteca angular-fontawesome para uso em projetos Angular.
   Caso de Uso: Fornece acesso à coleção completa de ícones gratuitos do Font Awesome para aprimorar a interface do usuário.
 
-3. <b>animate.css</b>
+2. <b>animate.css</b>
 - Versão: ^4.1.1
 
   Animate.css é uma biblioteca CSS para criar animações compatíveis com navegadores de forma simples. Inclui uma grande variedade de animações predefinidas, como fade-ins, bounces e zooms.
   Caso de Uso: Adicionar animações atraentes a elementos da interface, como botões, modais e outros componentes, para melhorar a experiência do usuário.
 
-4. <b>notiflix</b>
+3. <b>notiflix</b>
 - Versão: ^3.2.7
 
   Notiflix é uma biblioteca JavaScript leve para criar notificações personalizáveis, alertas, indicadores de carregamento e diálogos de confirmação.
   Caso de Uso: Fornecer feedback aos usuários por meio de notificações elegantes, incluindo mensagens de sucesso, erro e informação.
 
-5. <b>moment</b>
+4. <b>moment</b>
 - Versão: ^2.30.1
 
   Moment.js é uma biblioteca JavaScript popular para análise, validação, manipulação e formatação de datas.
   Caso de Uso: Simplificar o trabalho com datas e horários, incluindo formatação, conversões de fuso horário e comparações de datas.
 
-6. <b>aos (Animate on Scroll)</b>
+5. <b>aos (Animate on Scroll)</b>
 - Versão: ^2.3.4
 
   AOS é uma biblioteca leve para adicionar animações disparadas por eventos de rolagem. Permite que elementos animem ao entrar na tela conforme o usuário rola a página.
   Caso de Uso: Criar efeitos de rolagem envolventes, como fade-ins e slide-ups, para melhorar a interatividade geral do aplicativo.
 
-Cada uma dessas bibliotecas desempenha um papel essencial para aprimorar a funcionalidade, a experiência do usuário e a interatividade do aplicativo. Para mais detalhes e documentação, consulte os links correspondentes.
+6. <b>@faker-js/faker</b>
+- Versão: ^9.6.0
 
+  Uma biblioteca para gerar dados falsos de maneira fácil e rápida.
+  Caso de Uso: Criar dados fictícios para testes, protótipos ou para preencher tabelas com dados simulados.
 
+7. <b>@lithiumjs/angular</b>
+- Versão: ^8.0.1
+
+  Biblioteca para melhorar a experiência com Angular, fornecendo componentes e utilitários de alto desempenho.
+  Caso de Uso: Usar os componentes e utilitários para aumentar a eficiência e a qualidade do código.
+
+8. <b>@lithiumjs/ngx-virtual-scroll</b>
+- Versão: ^0.3.3
+
+  Biblioteca para implementar rolagem virtual em Angular, permitindo renderizar listas grandes de maneira eficiente.
+  Caso de Uso: Utilizar em listas grandes para melhorar o desempenho e a experiência do usuário ao visualizar grandes volumes de dados.
+
+9. <b>@ng-bootstrap/ng-bootstrap</b>
+- Versão: ^18.0.0
+
+  Biblioteca para usar componentes do Bootstrap com Angular.
+  Caso de Uso: Adicionar componentes do Bootstrap como modais, popovers, tooltips, etc., diretamente no Angular.
+
+10. <b>bootstrap</b>
+- Versão: ^5.3.3
+
+  Framework front-end popular para criar interfaces responsivas e móveis.
+  Caso de Uso: Utilizar para criar layouts rápidos e responsivos usando a grade e os componentes do Bootstrap.
+
+11. <b>miragejs</b>
+- Versão: ^0.1.48
+
+  Biblioteca para criar APIs de teste simuladas.
+  Caso de Uso: Simular APIs para testes e desenvolvimento sem depender de back-end real.
+
+12. <b>ngx-mask</b>
+- Versão: ^19.0.6
+
+  Biblioteca para aplicar máscaras de entrada em campos de formulário.
+  Caso de Uso: Facilitar a formatação de entradas de usuário, como CPF, CNPJ, telefones e outros campos com formatação específica.
+
+13. <b>signature_pad</b>
+- Versão: ^5.0.4
+
+  Biblioteca para capturar assinaturas manuscritas em formulários digitais.
+  Caso de Uso: Permitir que os usuários assinem digitalmente em dispositivos com toque ou mouse.
 
 # Comandos
 
@@ -58,7 +97,10 @@ Servir na porta 3000 com ambiente 'development':
 ```
 npm run serve
 ```
-
+Servir na porta 3000 com ambiente 'development' e habilitar o servidor para dados fakes:
+```
+npm run serve:mock
+```
 Executar os testes unitários
 ```
 ng test
@@ -117,16 +159,16 @@ Esta seção descreve a estrutura de pastas utilizada no projeto Angular e a fin
 │ └───data
 └─src
   ├───app
-  │   ├───core
-  │   │   ├───components
+  │   ├───core     
   │   │   ├───guards
-  │   │   ├───interceptors
-  │   │   ├───pages
+  │   │   ├───interceptors    
   │   │   └───services
   │   ├───features
   │   └───shared
   │       ├───components
   │       ├───directives
+  │       ├───models
+  │       ├───services
   │       └───pipes
   └───environments
 ```
@@ -146,12 +188,11 @@ Diretório principal do projeto Angular. Contém o código-fonte da aplicação.
 ##### **app/**
 - **core/**:
   Contém código essencial para a aplicação que deve ser carregado uma vez e estar disponível em todo o projeto.
-  - **components/**: Componentes globais usados em toda a aplicação (ex.: Header, Footer).
+
   - **guards/**: Guardas de rota que controlam o acesso a determinadas páginas (ex.: AuthGuard).
   - **interceptors/**: Interceptadores HTTP para manipular requisições e respostas (ex.: Adicionar cabeçalhos de autenticação).
-  - **models/**: Local de armazenamento das interfaces de dados.
-  - **pages/**: Páginas principais e globais da aplicação, como tela de login ou página de erro 404.
-  - **services/**: Serviços centrais que fornecem funcionalidades compartilhadas, como autenticação ou manipulação de configurações globais.
+
+
 
 - **features/**:
   Contém os módulos específicos de funcionalidades ou páginas, organizados por domínio ou caso de uso (ex.: `products`, `users`). Cada funcionalidade geralmente possui seus próprios componentes, serviços e rotas.
@@ -161,6 +202,8 @@ Diretório principal do projeto Angular. Contém o código-fonte da aplicação.
   - **components/**: Componentes reutilizáveis, como botões, modais ou tabelas.
   - **directives/**: Diretivas personalizadas reutilizáveis.
   - **pipes/**: Pipes personalizados reutilizáveis para formatação de dados.
+  - **models/**: Local de armazenamento das interfaces de dados.
+  - **services/**: Serviços centrais que fornecem funcionalidades compartilhadas.
 
 ##### **environments/**
 Contém arquivos de configuração de ambiente (`environment.ts` e `environment.prod.ts`). Esses arquivos permitem definir variáveis específicas para cada ambiente (desenvolvimento, produção, etc.).
