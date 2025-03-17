@@ -7,13 +7,17 @@ import { TestFormularyComponent } from './pages/formulary/test-formulary.compone
 import { ButtonsComponent } from './pages/buttons/buttons.component';
 import { NotiflixComponent } from './pages/notiflix/notiflix.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalComponent } from './pages/modal/modal.component';
+import { OffcanvasComponent } from './pages/offcanvas/offcanvas.component';
 
 
 @NgModule({
   declarations: [
     TestFormularyComponent,
     ButtonsComponent,
-    NotiflixComponent
+    NotiflixComponent,
+    ModalComponent,
+    OffcanvasComponent
   ],
   imports: [
     CommonModule,

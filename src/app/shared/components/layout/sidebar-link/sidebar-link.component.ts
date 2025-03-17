@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { SidebarLink } from '../../../models/SidebarLink';
 
 @Component({
   selector: 'sidebar-link',
@@ -8,10 +9,20 @@ import { Component, Input } from '@angular/core';
 })
 export class LayoutSidebarLinkComponent {
 
-  @Input({required:true}) link!:{link?:string, label:string, icon?:string};
+  open = false;
+
+  @Input({required:true}) link!:SidebarLink;
+
+  toggleOpen(){
+    this.open = !this.open;
+  }
 
   get separator(){
     return this.link.label == 'separator' ? true : false;
+  }
+
+  get isSubLink(){
+    return this.link.links ? true : false;
   }
 
 }

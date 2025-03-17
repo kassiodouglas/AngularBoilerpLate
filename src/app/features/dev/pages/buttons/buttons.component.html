@@ -1,6 +1,70 @@
-<div class="p-4">
 
-<button class="button button-primary">Primary</button>
-<button class="button button-secondary">Secondary</button>
+<breadcumb [breadcumbs]="['Playground','Buttons']"/>
+<page-title title="Buttons" text="Exibição do uso dos botões da aplicação"/>
+
+<div class="grid gap-3 mt-4">
+
+  <div class="grid grid-cols-6 gap-3">
+
+    <button class="btn-xs-primary">btn-xs-primary</button>
+    <button class="btn-xs-secondary">btn-xs-secondary</button>
+    <button class="btn-xs-success">btn-xs-success</button>
+    <button class="btn-xs-info">btn-xs-info</button>
+    <button class="btn-xs-warning">btn-xs-warning</button>
+    <button class="btn-xs-danger">btn-xs-danger</button>
+
+  </div>
+
+  <div class="grid grid-cols-6 gap-3">
+
+    <button class="btn-sm-primary">btn-sm-primary</button>
+    <button class="btn-sm-secondary">btn-sm-secondary</button>
+    <button class="btn-sm-success">btn-sm-success</button>
+    <button class="btn-sm-info">btn-sm-info</button>
+    <button class="btn-sm-warning">btn-sm-warning</button>
+    <button class="btn-sm-danger">btn-sm-danger</button>
+
+  </div>
+
+  <div class="grid grid-cols-6 gap-3">
+
+    <button class="btn-md-primary">btn-md-primary</button>
+    <button class="btn-md-secondary">btn-md-secondary</button>
+    <button class="btn-md-success">btn-md-success</button>
+    <button class="btn-md-info">btn-md-info</button>
+    <button class="btn-md-warning">btn-md-warning</button>
+    <button class="btn-md-danger">btn-md-danger</button>
+
+  </div>
+
+  <div class="grid grid-cols-6 gap-3">
+
+    <button class="btn-xl-primary">btn-xl-primary</button>
+    <button class="btn-xl-secondary">btn-xl-secondary</button>
+    <button class="btn-xl-success">btn-xl-success</button>
+    <button class="btn-xl-info">btn-xl-info</button>
+    <button class="btn-xl-warning">btn-xl-warning</button>
+    <button class="btn-xl-danger">btn-xl-danger</button>
+
+  </div>
+
+  <div class="grid grid-cols-6 gap-3">
+
+    <button class="btn-2xl-primary">btn-2xl-primary</button>
+    <button class="btn-2xl-secondary">btn-2xl-secondary</button>
+    <button class="btn-2xl-success">btn-2xl-success</button>
+    <button class="btn-2xl-info">btn-2xl-info</button>
+    <button class="btn-2xl-warning">btn-2xl-warning</button>
+    <button class="btn-2xl-danger">btn-2xl-danger</button>
+
+  </div>
+
+  <div class="grid grid-cols-6 gap-3">
+
+    <button [disabled]="true" class="btn-md-primary">disabled</button>
+
+  </div>
 
 </div>
+
+

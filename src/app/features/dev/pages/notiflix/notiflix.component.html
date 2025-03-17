@@ -1,47 +1,50 @@
 
-<section class="m-4">
+<breadcumb [breadcumbs]="['Playground','Notiflix']"/>
+<page-title title="Notiflix" text="Documentação sobre o uso do módulo"/>
+
+<section class="my-4">
   <div class="text-lg font-bold">Notify</div>
   <div class="flex flex-row space-x-4">
-    <button class="p-2 bg-green-400 hover:bg-green-600 rounded-md min-w-[100px]" (click)="success()">Success</button>
-    <button class="p-2 bg-red-400 hover:bg-red-600 rounded-md min-w-[100px]" (click)="error()">Error</button>
-    <button class="p-2 bg-yellow-400 hover:bg-yellow-600 rounded-md min-w-[100px]" (click)="warning()">Warning</button>
-    <button class="p-2 bg-blue-400 hover:bg-blue-600 rounded-md min-w-[100px]" (click)="info()">Info</button>
+    <button class="btn-sm-success min-w-[100px]" (click)="success()">Success</button>
+    <button class="btn-sm-danger min-w-[100px]" (click)="error()">Error</button>
+    <button class="btn-sm-warning min-w-[100px]" (click)="warning()">Warning</button>
+    <button class="btn-sm-info min-w-[100px]" (click)="info()">Info</button>
   </div>
 </section>
 
-<section class="m-4">
+<section class="my-4">
   <div class="text-lg font-bold">Loading</div>
   <div class="flex flex-row space-x-4">
-    <button class="p-2 bg-primary-400 hover:bg-primary-600 rounded-md min-w-[100px]" (click)="loading()">Loading</button>
+    <button class="btn-sm-primary  min-w-[100px]" (click)="loading()">Loading</button>
   </div>
 </section>
 
-<section class="m-4">
+<section class="my-4">
   <div class="text-lg font-bold">Confirm</div>
   <div class="flex flex-row space-x-4">
-    <button class="p-2 bg-secondary-400 hover:bg-secondary-600 rounded-md min-w-[100px]" (click)="confirm()">Confirm?</button>
+    <button class="btn-sm-secondary  min-w-[100px]" (click)="confirm()">Confirm?</button>
   </div>
 </section>
 
-<section class="m-4">
+<section class="my-4">
   <div class="text-lg font-bold">Block</div>
   <div class="">
     @if(!blocking){
-      <button class="p-2 bg-red-400 hover:bg-red-600 rounded-md min-w-[100px]" (click)="block()">Block</button> }
+      <button class="btn-sm-danger  min-w-[100px]" (click)="block()">Block</button> }
     @else{
-      <button class="p-2 bg-secondary-800 hover:bg-secondary-900 rounded-md min-w-[100px]" (click)="unblock()">Unblock</button>
+      <button class="btn-sm-secondary  min-w-[100px]" (click)="unblock()">Unblock</button>
     }
     <div class="card-block flex items-center rounded-md p-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra justo eget lacus pellentesque sollicitudin. Integer lobortis vel nisl nec consequat. </div>
   </div>
 </section>
 
-<section class="m-4">
+<section class="my-4 mb-20">
   <div class="text-lg font-bold">Report</div>
   <div class="flex flex-row space-x-4">
-    <button class="p-2 bg-green-400 hover:bg-green-600 rounded-md min-w-[100px]" (click)="reportSuccess()">Success</button>
-    <button class="p-2 bg-red-400 hover:bg-red-600 rounded-md min-w-[100px]" (click)="reportError()">Error</button>
-    <button class="p-2 bg-yellow-400 hover:bg-yellow-600 rounded-md min-w-[100px]" (click)="reportWarning()">Warning</button>
-    <button class="p-2 bg-blue-400 hover:bg-blue-600 rounded-md min-w-[100px]" (click)="reportInfo()">Info</button>
+    <button class="btn-sm-success  min-w-[100px]" (click)="reportSuccess()">Success</button>
+    <button class="btn-sm-danger min-w-[100px]" (click)="reportError()">Error</button>
+    <button class="btn-sm-warning min-w-[100px]" (click)="reportWarning()">Warning</button>
+    <button class="btn-sm-info min-w-[100px]" (click)="reportInfo()">Info</button>
   </div>
 </section>
 

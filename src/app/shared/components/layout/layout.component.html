@@ -4,20 +4,20 @@
     class="sidebar"
     [class.-translate-x-full]="!isOpen"
   >
-    <div class="flex flex-col h-full p-4">
+    <div class="flex flex-col h-full p-2">
       <!-- Avatar e informações -->
       <div class="flex flex-col items-center">
         <div
           class="avatar"
-          [style.background-image]="'url(https://img.freepik.com/fotos-gratis/retrato-de-homem-branco-isolado_53876-40306.jpg)'">
+          [style.background-image]="avatar">
         </div>
 
         <div>
           <div class="font-semibold text-lg truncate w-[170px]">
-            Alberto Roberto Gomes Da Silva
+            Kássio Douglas Quiroz de Souza
           </div>
           <div class="text-sm opacity-55 truncate w-[170px]">
-            alberto.roberto&#64;litwo.com.br
+            kass.doug&#64;gmail.com
           </div>
         </div>
       </div>
@@ -42,10 +42,7 @@
   </div>
 
   <!-- Conteúdo Principal -->
-  <div
-    class="content"
-    [class.ml-64]="isOpen"
-  >
+  <div class="content ml-72 px-2" [ngClass]="{'!ml-0 !px-10':!isOpen}">
     <router-outlet></router-outlet>
   </div>
 </div>

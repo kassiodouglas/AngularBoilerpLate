@@ -9,6 +9,7 @@
     "test": "ng test",
     "serve": "ng serve --configuration development --host 0.0.0.0  --port 3000",
     "serve:mock": "ng serve --configuration mock --host 0.0.0.0  --port 3000",
+    "build:prod": "ng build --configuration production",
     "g-component": "node src/commands/generate.js --path=components",
     "g-guard": "node src/commands/generate.js --path=guards",
     "g-interceptor": "node src/commands/generate.js --path=interceptors",

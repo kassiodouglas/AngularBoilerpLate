@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin');
+
 const colors = {
   primary: {
     50: "#f6f5fd",
@@ -93,5 +95,69 @@ module.exports = {
       colors: { ...colors },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function({ addComponents }) {
+      addComponents({
+        '.button': {
+          '@apply max-h-10 font-semibold py-2 px-4 rounded-md focus:ring-2 focus:ring-opacity-50 transition-all active:scale-105 disabled:opacity-50 disabled:scale-100 disabled:cursor-not-allowed truncate border-none': {},
+        },
+        '.btn-xs': { '@apply text-xs py-1 px-3':{} },
+        '.btn-sm': { '@apply text-sm py-1 px-3':{} },
+        '.btn-lg': { '@apply text-lg py-3 px-3 max-h-10':{} },
+        '.btn-xl': { '@apply text-xl py-2 max-h-12':{} },
+        '.btn-2xl': { '@apply text-2xl py-2 max-h-16':{} },
+
+        '.btn-primary': { '@apply dark:bg-primary-900 dark:hover:bg-primary-700 dark:text-white dark:focus:ring-primary-400':{} },
+        '.btn-secondary': { '@apply dark:bg-secondary-900 dark:hover:bg-secondary-700 dark:text-white dark:focus:ring-secondary-400':{} },
+        '.btn-success': { '@apply dark:bg-success-500 dark:hover:bg-success-700 dark:text-white dark:focus:ring-success-400':{} },
+        '.btn-danger': { '@apply dark:bg-danger-500 dark:hover:bg-danger-700 dark:text-white dark:focus:ring-danger-400':{} },
+        '.btn-warning': { '@apply dark:bg-warning-600 dark:hover:bg-warning-700 dark:text-white dark:focus:ring-warning-400':{} },
+        '.btn-info': { '@apply dark:bg-info-500 dark:hover:bg-info-700 dark:text-white dark:focus:ring-info-400':{} },
+
+        '.btn-xs-primary': { '@apply button btn-xs btn-primary':{} },
+
+        '.btn-sm-primary': { '@apply button btn-sm btn-primary':{} },
+        '.btn-md-primary': { '@apply button btn-primary':{} },
+        '.btn-lg-primary': { '@apply button btn-lg btn-primary':{} },
+        '.btn-xl-primary': { '@apply button btn-xl btn-primary':{} },
+        '.btn-2xl-primary': { '@apply button btn-2xl btn-primary':{} },
+
+        '.btn-xs-secondary': { '@apply button btn-xs btn-secondary':{} },
+        '.btn-sm-secondary': { '@apply button btn-sm btn-secondary':{} },
+        '.btn-md-secondary': { '@apply button btn-secondary':{} },
+        '.btn-lg-secondary': { '@apply button btn-lg btn-secondary':{} },
+        '.btn-xl-secondary': { '@apply button btn-xl btn-secondary':{} },
+        '.btn-2xl-secondary': { '@apply button btn-2xl btn-secondary':{} },
+
+        '.btn-xs-success': { '@apply button btn-xs btn-success':{} },
+        '.btn-sm-success': { '@apply button btn-sm btn-success':{} },
+        '.btn-md-success': { '@apply button btn-success':{} },
+        '.btn-lg-success': { '@apply button btn-lg btn-success':{} },
+        '.btn-xl-success': { '@apply button btn-xl btn-success':{} },
+        '.btn-2xl-success': { '@apply button btn-2xl btn-success':{} },
+
+        '.btn-xs-danger': { '@apply button btn-xs btn-danger':{} },
+        '.btn-sm-danger': { '@apply button btn-sm btn-danger':{} },
+        '.btn-md-danger': { '@apply button btn-danger':{} },
+        '.btn-lg-danger': { '@apply button btn-lg btn-danger':{} },
+        '.btn-xl-danger': { '@apply button btn-xl btn-danger':{} },
+        '.btn-2xl-danger': { '@apply button btn-2xl btn-danger':{} },
+
+        '.btn-xs-warning': { '@apply button btn-xs btn-warning':{} },
+        '.btn-sm-warning': { '@apply button btn-sm btn-warning':{} },
+        '.btn-md-warning': { '@apply button btn-warning':{} },
+        '.btn-lg-warning': { '@apply button btn-lg btn-warning':{} },
+        '.btn-xl-warning': { '@apply button btn-xl btn-warning':{} },
+        '.btn-2xl-warning': { '@apply button btn-2xl btn-warning':{} },
+
+        '.btn-xs-info': { '@apply button btn-xs btn-info':{} },
+        '.btn-sm-info': { '@apply button btn-sm btn-info':{} },
+        '.btn-md-info': { '@apply button btn-info':{} },
+        '.btn-lg-info': { '@apply button btn-lg btn-info':{} },
+        '.btn-xl-info': { '@apply button btn-xl btn-info':{} },
+        '.btn-2xl-info': { '@apply button btn-2xl btn-info':{} },
+
+      })
+    })
+  ],
 };
