@@ -3,23 +3,27 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+
     "serve": "ng serve --configuration development --host 0.0.0.0  --port 3000",
+    "serve:test": "ng serve --configuration test --host 0.0.0.0  --port 3000",
     "serve:mock": "ng serve --configuration mock --host 0.0.0.0  --port 3000",
+    "serve:prod": "ng serve --configuration production --host 0.0.0.0  --port 3000",
+
+    "build": "ng build --configuration development",
+    "build:test": "ng build --configuration test",
+    "build:mock": "ng build --configuration mock",
     "build:prod": "ng build --configuration production",
-    "g-component": "node src/commands/generate.js --path=components",
-    "g-guard": "node src/commands/generate.js --path=guards",
-    "g-interceptor": "node src/commands/generate.js --path=interceptors",
-    "g-page": "node src/commands/generate.js --path=pages",
-    "g-service": "node src/commands/generate.js --path=services",
-    "g-feature": "node src/commands/generate.js --path=features",
-    "g-module": "node src/commands/generate.js --path=modules",
-    "g-pipe": "node src/commands/generate.js --path=pipes",
-    "g-directive": "node src/commands/generate.js --path=directives",
-    "g-model": "node src/commands/generate.js --path=models"
+
+    "make:guard":"node src/commands/make.js --dir=guard",
+    "make:interceptor":"node src/commands/make.js --dir=interceptor",
+    "make:feature":"node src/commands/make.js --dir=feature",
+    "make:page":"node src/commands/make.js --dir=page",
+    "make:component":"node src/commands/make.js --dir=component",
+    "make:directive":"node src/commands/make.js --dir=directive",
+    "make:model":"node src/commands/make.js --dir=model",
+    "make:pipe":"node src/commands/make.js --dir=pipe",
+    "make:service":"node src/commands/make.js --dir=service"
+
   },
   "private": true,
   "dependencies": {

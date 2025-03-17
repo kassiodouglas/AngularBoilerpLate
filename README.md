@@ -91,56 +91,92 @@ Abaixo está uma lista das principais bibliotecas utilizadas neste projeto, junt
   Biblioteca para capturar assinaturas manuscritas em formulários digitais.
   Caso de Uso: Permitir que os usuários assinem digitalmente em dispositivos com toque ou mouse.
 
-# Comandos
+# Comandos de servidor
 
 Servir na porta 3000 com ambiente 'development':
 ```
 npm run serve
 ```
+
 Servir na porta 3000 com ambiente 'development' e habilitar o servidor para dados fakes:
 ```
 npm run serve:mock
 ```
-Executar os testes unitários
+
+Servir na porta 3000 com ambiente 'test':
 ```
-ng test
+npm run serve:test
+```
+
+Servir na porta 3000 com ambiente 'production':
+```
+npm run serve:prod
+```
+
+# Comandos de build
+Compila a aplicação com ambiente 'development':
+```
+npm run build
+```
+
+Compila a aplicação com ambiente 'test':
+```
+npm run build:test
+```
+
+Compila a aplicação com ambiente 'production':
+```
+npm run build:prod
 ```
 
 ## Comandos de Geração
 Os seguintes comandos são usados para gerar diferentes tipos de arquivos e estruturas dentro de um projeto Angular. Eles utilizam um script customizado generate.js para gerar os componentes e outras entidades com base no caminho especificado.
 
-1. <b>npm run g-component</b>
-Gera um componente no caminho features/components, ou em outro caminho configurado via o parâmetro where. Use este comando para criar novos componentes no seu projeto Angular.
-2. <b>npm run g-guard</b>
-Gera um guard no caminho core/guards, ou em outro caminho configurado via o parâmetro where. Utilize este comando para criar guards que protejam rotas no Angular.
-3. <b>npm run g-interceptor</b>
-Gera um interceptor no caminho core/interceptors, ou em outro caminho configurado via o parâmetro where. Esse comando é utilizado para criar interceptores de requisições HTTP ou outras operações no Angular.
-4. <b>npm run g-page</b>
-Gera um componente de página no caminho features/pages. Use este comando para gerar componentes específicos para páginas no Angular.
-5. <b>npm run g-service</b>
-Gera um serviço no caminho features/services. Com este comando, você cria novos serviços para manipulação de dados ou lógica de negócios.
-6. <b>npm run g-feature</b>
-Gera um módulo no caminho features, utilizado para encapsular funcionalidades específicas no projeto.
-7. <b>npm run g-module</b>
-Gera um módulo no caminho features/modules, ou em outro caminho configurado via o parâmetro where. Esse comando é utilizado para criar novos módulos dentro da aplicação.
-8. <b>npm run g-pipe</b>
-Gera um pipe no caminho shared/pipes, ou em outro caminho configurado via o parâmetro where. Use este comando para criar pipes reutilizáveis no seu projeto Angular.
-9. <b>npm run g-model</b>
-Gera arquivos de interface dentro do core.
 
+ 1. <b>make:guard NOME</b>
+    -  Cria um guard dentro de core;
 
-### Parâmetros
-- <b>--path=<entidade></b>: Define o tipo de entidade a ser gerada (ex: components, guards, services).
-- <b>--where=<diretório></b>: Define o diretório onde a entidade será gerada (valores válidos: core, features, shared).
-- <b>--name=<nome></b>: O nome do componente, serviço, guard, etc., a ser gerado. Esse nome é obtido através da variável de ambiente npm_config_name.
+ 2. <b>make:interceptor NOME</b>
+    -  Cria um interceptor dentro de core;
+
+ 3. <b>make:feature NOME</b>
+    -  Cria um módulo roteado na raiz de features;
+
+ 4. <b>make:page FEATURE NOME</b>
+     -  Cria um componente de pagina dentro da feature informada;
+
+ 5. <b>make:component NOME</b>
+      -  Cria um componente compartilhável em shared/components;
+
+ 6. <b>make:directive NOME</b>
+      -  Cria uma directiva compartilhável em shared/directives;
+
+ 7. <b>make:model NOME</b>
+      -  Cria uma interface compartilhável em shared/models;
+
+ 8. <b>make:pipe NOME</b>
+      -  Cria um pipe compartilhável em shared/pipes;
+
+ 9. <b>make:service NOME</b>
+      -  Cria um service compartilhável em shared/services;
+
+ 109. <b>make:service FEATURE NOME</b>
+      -  Cria um service exclusivo dentro da feature informada;
+
 
 ### Exemplo de Uso
-Se você deseja gerar um componente chamado header dentro da pasta components, você pode executar:
+Se você deseja gerar um componente chamado header dentro da pasta shared/components, você pode executar:
 
 ```
-npm run g-component --path=components --where=features --name=header
+npm run make:component header
 ```
-Esse comando criará um componente header no diretório features/components.
+
+Se você deseja gerar um service exclusivo de uma feature User você pode executar:
+
+```
+npm run make:service User meu-user-service
+```
+Esse comando criará um service diretório features/user/services/meu-user-service.service.ts.
 
 Esses comandos são úteis para agilizar a geração de arquivos em um projeto Angular e manter a organização da estrutura de pastas.
 
@@ -217,3 +253,55 @@ Contém arquivos de configuração de ambiente (`environment.ts` e `environment.
 4. **Centralização do Core**: Recursos globais são agrupados no diretório `core/`, reduzindo redundâncias e promovendo boas práticas.
 
 Essa estrutura é altamente recomendada para aplicações Angular de médio a grande porte, proporcionando organização e facilidade de manutenção ao longo do ciclo de vida do projeto.
+
+# Mock-Server
+O MirageJS é uma biblioteca para simulação de APIs RESTful, útil para criar mocks de dados e testar seu aplicativo sem depender de uma API real. Ele é frequentemente combinado com o Faker.js (ou o @faker-js/faker, que é uma versão mais atualizada) para gerar dados falsos realistas, como nomes, endereços e outros dados que podem ser usados para testar sua aplicação.
+
+## Exemplo
+```
+// src/mock-server/server.ts
+
+import { createServer, Model, Factory } from 'miragejs';
+import { faker } from '@faker-js/faker'; // Importando o faker
+
+export function makeServer() {
+  const server = createServer({
+    models: {
+      user: Model, // Definindo um modelo para usuários
+    },
+
+    factories: {
+      user: Factory.extend({
+        // Usando Faker.js para gerar dados falsos
+        firstName: faker.name.firstName(),
+        lastName: faker.name.lastName(),
+        email: faker.internet.email(),
+        address: faker.address.streetAddress(),
+      }),
+    },
+
+    routes() {
+      this.namespace = 'api'; // Definindo o namespace da API
+
+      // Endpoint que retorna uma lista de usuários
+      this.get('/users', (schema) => {
+        return schema.users.all(); // Retorna todos os usuários simulados
+      });
+
+      // Endpoint que retorna um único usuário
+      this.get('/user/:id', (schema, request) => {
+        let id = request.params.id;
+        return schema.users.find(id); // Retorna o usuário baseado no ID
+      });
+    },
+
+    seeds(server) {
+      // Criando dados falsos ao iniciar o servidor
+      server.createList('user', 10); // Cria uma lista de 10 usuários
+    },
+  });
+
+  return server;
+}
+
+```

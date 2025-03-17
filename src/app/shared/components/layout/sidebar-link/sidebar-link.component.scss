@@ -1,0 +1,32 @@
+.link{
+  @apply
+  flex
+  justify-start
+  items-center
+  mb-1
+  rounded-md p-2
+  hover:ms-1
+  transition-all
+  cursor-pointer
+  hover:bg-primary-700
+  text-gray-700
+  hover:text-gray-100
+  dark:hover:bg-primary-800
+  dark:text-gray-400
+  dark:hover:text-gray-300
+}
+
+.sublink{
+  @apply
+  flex
+  justify-between
+}
+
+.separator{
+  @apply
+    border-b
+    border-secondary-300
+    dark:border-secondary-800
+    w-full
+    my-3
+}

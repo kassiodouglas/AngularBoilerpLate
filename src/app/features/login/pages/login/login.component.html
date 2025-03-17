@@ -1,4 +1,4 @@
-<div class="bg-screen">
+<div class="bg-screen" data-aos="fade-down">
   <div class="around-form">
 
     <div class="logo">
@@ -11,11 +11,14 @@
 
       <inputy label="Senha" controlName="password" type="password"/>
 
-      <button type="submit" class="button-access" [disabled]="!form.valid">
+      <button type="submit" class="btn-xl-primary w-full" [disabled]="!form.valid">
         <i class="fa-solid fa-check"></i> Acessar
       </button>
 
-      <div class="text-center mt-4">
+      <div class="flex justify-between mt-4">
+        <a href="#" class="forget-pass-link">
+          Não tem conta?
+        </a>
         <a href="#" class="forget-pass-link">
           Esqueceu a senha?
         </a>

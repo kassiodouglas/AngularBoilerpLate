@@ -1,7 +1,7 @@
-<breadcumb [breadcumbs]="['Playground','Formulary']"/>
-<page-title title="Formulary" text="Documentação sobre o módulo"/>
+<main data-aos="fade-left">
 
-
+  <breadcumb [breadcumbs]="['Playground','Formulary']"/>
+  <page-title title="Formulary" text="Documentação sobre o módulo"/>
 
   <section class="mt-10" data-aos="fade-up">
       <h2 class="text-2xl font-bold">Visão Geral</h2>
@@ -37,20 +37,20 @@
       <h2 class="text-2xl font-semibold">Como Usar</h2>
       <p class="text-secondary-300">Para utilizar este módulo em seu projeto Angular, importe o <code>FormularyModule</code> no seu módulo principal.</p>
       <pre class="bg-gray-800 text-white p-4 rounded">
-import {{ '{' }} FormularyModule {{ '}' }} from './formulary/formulary.module';
-NgModule({{ '{' }}
-imports: [FormularyModule],
-{{ '}' }})
-export class AppModule {{ '}' }}
+  import {{ '{' }} FormularyModule {{ '}' }} from './formulary/formulary.module';
+  NgModule({{ '{' }}
+  imports: [FormularyModule],
+  {{ '}' }})
+  export class AppModule {{ '}' }}
       </pre>
       <h3 class="text-xl font-semibold mt-6">Exemplo de Uso dos Componentes</h3>
       <p>Você pode utilizar os componentes nos seus templates da seguinte maneira:</p>
       <pre class="bg-gray-800 text-white p-4 rounded">
-&lt;inputy label="Nome" formControlName="nome"&gt;&lt;/inputy&gt;
-&lt;selecty label="Escolha uma opção" formControlName="opcao" [options]="[]"&gt;&lt;/selecty&gt;
-&lt;switchy label="Ativar" formControlName="ativo"&gt;&lt;/switchy&gt;
-&lt;textareay label="Descrição" formControlName="descricao"&gt;&lt;/textareay&gt;
-&lt;datepickery label="Data de Nascimento" formControlName="data"&gt;&lt;/datepickery&gt;
+  &lt;inputy label="Nome" formControlName="nome"&gt;&lt;/inputy&gt;
+  &lt;selecty label="Escolha uma opção" formControlName="opcao" [options]="[]"&gt;&lt;/selecty&gt;
+  &lt;switchy label="Ativar" formControlName="ativo"&gt;&lt;/switchy&gt;
+  &lt;textareay label="Descrição" formControlName="descricao"&gt;&lt;/textareay&gt;
+  &lt;datepickery label="Data de Nascimento" formControlName="data"&gt;&lt;/datepickery&gt;
       </pre>
   </section>
 
@@ -256,6 +256,6 @@ export class AppModule {{ '}' }}
     </div>
   </section>
 
-
+</main>
 
 

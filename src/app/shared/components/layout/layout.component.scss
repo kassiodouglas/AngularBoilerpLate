@@ -18,6 +18,8 @@
     bottom-0
     duration-300
     z-10
+    bg-secondary-100
+    dark:bg-secondary-900
 }
 
 
@@ -37,8 +39,8 @@
     top-1/2
     transform
     -translate-y-1/2
-  bg-gray-800
-   text-white
+    dark:bg-gray-800
+    dark:text-white
     opacity-65
     hover:opacity-100
     p-1
@@ -50,18 +52,18 @@
     duration-300
 }
 
-.avatar{
-  @apply
-    rounded-full
-    w-[40px]
-    h-[40px]
-    bg-cover
-    bg-center
-    m-2
-    border
-    border-slate-100
-    shadow-md
-    shadow-black
-}
+// .avatar{
+//   @apply
+//     rounded-full
+//     w-[40px]
+//     h-[40px]
+//     bg-cover
+//     bg-center
+//     m-2
+//     border
+//     border-slate-100
+//     shadow-md
+//     shadow-black
+// }
 
 

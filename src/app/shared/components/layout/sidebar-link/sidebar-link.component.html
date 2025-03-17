@@ -1,25 +1,39 @@
 @if(!separator){
   @if(!isSubLink){
-    <div [routerLink]="'/'+link.link" routerLinkActive="bg-slate-800"  [routerLinkActiveOptions]="{exact: true}" rou class="flex justify-start items-center mb-1 text-gray-400 hover:text-gray-300 hover:font-bold transition-all cursor-pointer hover:bg-slate-800 rounded-md p-2">
+    <div
+     [routerLink]="'/'+link.link"
+     routerLinkActive="bg-primary-500 dark:bg-primary-900 text-white"
+     [routerLinkActiveOptions]="{exact: true}"
+     class="link">
       <div class="me-2 text-sm" [innerHTML]="link.icon"></div>
       <span class="text-sm">{{ link.label }}</span>
     </div>
   }@else{
     <div class="group">
-      <div (click)="toggleOpen()" routerLinkActive="bg-slate-800"  [routerLinkActiveOptions]="{exact: true}" rou class="flex justify-between items-center mb-1 text-gray-400 hover:text-gray-300 hover:font-bold transition-all cursor-pointer hover:bg-slate-800 rounded-md p-2">
+      <div
+        (click)="toggleOpen()"
+        routerLinkActive="bg-primary-500 dark:bg-primary-900 text-white"
+        [routerLinkActiveOptions]="{exact: true}"
+        class="link sublink"
+      >
         <div class="flex justify-start items-center">
           <div class="me-2 text-sm" [innerHTML]="link.icon"></div>
           <span class="text-sm">{{ link.label }}</span>
         </div>
-        <i class="fa-solid fa-chevron-down transition-all" [ngClass]="{'rotate-0':!open, 'rotate-180':open}"></i>
+        <i class="fa-solid fa-chevron-down transition-all text-xs" [ngClass]="{'rotate-0':!open, 'rotate-180':open}"></i>
       </div>
-      <div class="ms-3 opacity-45 group-hover:opacity-100" [ngClass]="{'hidden':!open}">
+
+      <div
+        class="ms-3 overflow-hidden transition-all duration-300"
+        [ngClass]="{'max-h-0 opacity-0': !open, 'max-h-[100vh] opacity-100': open}"
+      >
         @for (sub of link.links; track sub) {
           <sidebar-link [link]="sub"/>
         }
       </div>
     </div>
+
   }
 }@else{
-  <div class="border-b border-gray-800 w-full my-3"></div>
+  <div class="separator"></div>
 }

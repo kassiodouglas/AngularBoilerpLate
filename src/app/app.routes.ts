@@ -6,6 +6,7 @@ export const routes: Routes = [
   // features endpoints
   { path: '', loadChildren: () => import('./features/home/home.module').then(m => m.HomeModule) },
   { path: '', loadChildren: () => import('./features/login/login.module').then(m => m.LoginModule) },
+  { path: '', loadChildren: () => import('./features/me/me.module').then(m => m.MeModule) },
 
   // default endpoints
   { canActivate:[devModeGuard],  path: '', loadChildren: () => import('./features/dev/dev.module').then(m => m.DevModule) },

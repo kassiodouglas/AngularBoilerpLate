@@ -107,15 +107,17 @@ module.exports = {
         '.btn-xl': { '@apply text-xl py-2 max-h-12':{} },
         '.btn-2xl': { '@apply text-2xl py-2 max-h-16':{} },
 
-        '.btn-primary': { '@apply dark:bg-primary-900 dark:hover:bg-primary-700 dark:text-white dark:focus:ring-primary-400':{} },
-        '.btn-secondary': { '@apply dark:bg-secondary-900 dark:hover:bg-secondary-700 dark:text-white dark:focus:ring-secondary-400':{} },
-        '.btn-success': { '@apply dark:bg-success-500 dark:hover:bg-success-700 dark:text-white dark:focus:ring-success-400':{} },
-        '.btn-danger': { '@apply dark:bg-danger-500 dark:hover:bg-danger-700 dark:text-white dark:focus:ring-danger-400':{} },
-        '.btn-warning': { '@apply dark:bg-warning-600 dark:hover:bg-warning-700 dark:text-white dark:focus:ring-warning-400':{} },
-        '.btn-info': { '@apply dark:bg-info-500 dark:hover:bg-info-700 dark:text-white dark:focus:ring-info-400':{} },
+        '.btn-primary': { '@apply bg-primary-900 hover:bg-primary-700 text-white focus:ring-primary-400':{} },
+        '.btn-secondary': { '@apply bg-secondary-900 hover:bg-secondary-700 text-white focus:ring-secondary-400':{} },
+        '.btn-success': { '@apply bg-success-500 hover:bg-success-700 text-white focus:ring-success-400':{} },
+        '.btn-danger': { '@apply bg-danger-500 hover:bg-danger-700 text-white focus:ring-danger-400':{} },
+        '.btn-warning': { '@apply bg-warning-600 hover:bg-warning-700 text-white focus:ring-warning-400':{} },
+        '.btn-info': { '@apply bg-info-500 hover:bg-info-700 text-white focus:ring-info-400':{} },
+
+        '.btn-white': { '@apply bg-white hover:bg-slate-100 text-secondary-500 focus:ring-secondary-400':{} },
+        '.btn-black': { '@apply bg-black hover:bg-slate-900 text-secondary-200 focus:ring-secondary-800':{} },
 
         '.btn-xs-primary': { '@apply button btn-xs btn-primary':{} },
-
         '.btn-sm-primary': { '@apply button btn-sm btn-primary':{} },
         '.btn-md-primary': { '@apply button btn-primary':{} },
         '.btn-lg-primary': { '@apply button btn-lg btn-primary':{} },
@@ -156,6 +158,20 @@ module.exports = {
         '.btn-lg-info': { '@apply button btn-lg btn-info':{} },
         '.btn-xl-info': { '@apply button btn-xl btn-info':{} },
         '.btn-2xl-info': { '@apply button btn-2xl btn-info':{} },
+
+        '.btn-xs-black': { '@apply button btn-xs btn-black':{} },
+        '.btn-sm-black': { '@apply button btn-sm btn-black':{} },
+        '.btn-md-black': { '@apply button btn-black':{} },
+        '.btn-lg-black': { '@apply button btn-lg btn-black':{} },
+        '.btn-xl-black': { '@apply button btn-xl btn-black':{} },
+        '.btn-2xl-black': { '@apply button btn-2xl btn-black':{} },
+
+        '.btn-xs-white': { '@apply button btn-xs btn-white':{} },
+        '.btn-sm-white': { '@apply button btn-sm btn-white':{} },
+        '.btn-md-white': { '@apply button btn-white':{} },
+        '.btn-lg-white': { '@apply button btn-lg btn-white':{} },
+        '.btn-xl-white': { '@apply button btn-xl btn-white':{} },
+        '.btn-2xl-white': { '@apply button btn-2xl btn-white':{} },
 
       })
     })

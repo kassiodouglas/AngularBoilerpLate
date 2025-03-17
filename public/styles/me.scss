@@ -1,0 +1,29 @@
+
+.me-avatar{
+  @apply
+    rounded-full
+    bg-cover
+    bg-center
+    m-2
+    border-2
+    border-secondary-100
+    dark:border-secondary-800
+    shadow-md
+    shadow-secondary-950
+    bg-slate-50
+}
+
+.me-avatar-sm{
+  @apply
+    me-avatar
+    w-[40px]
+    h-[40px]
+}
+
+.me-avatar-lg{
+  @apply
+    me-avatar
+    !w-[80px]
+    !h-[80px]
+}
+

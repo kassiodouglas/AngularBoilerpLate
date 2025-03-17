@@ -1,0 +1,72 @@
+<main data-aos="fade-left">
+
+  <breadcumb [breadcumbs]="['Playground','Minhas informações']"/>
+  <page-title title="Minhas informações" text="Minha área de configurações"/>
+
+  <section class="section">
+    <div class="grid grid-cols-5 gap-2">
+
+      <div class="col-span-1">
+        <p class="text-xl font-semibold text-primary-600 dark:text-primary-500">Trocar senha de acesso</p>
+        <small>Faça o resete da sua senha.</small>
+      </div>
+
+      <div class="col-span-4">
+        <form [formGroup]="formMe" class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <div>
+              <inputy type="password" label="Senha atual" controlName="current"/>
+            </div>
+            <div>
+              <inputy type="password" label="Nova senha" controlName="new"/>
+            </div>
+            <div>
+              <inputy type="password" label="Confirmação da nova senha" controlName="confirm"/>
+            </div>
+            <div>
+              <button type="submit" class="btn-md-success">Alterar senha</button>
+            </div>
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+
+    <div class="grid grid-cols-5 gap-2">
+
+      <div class="col-span-1">
+        <p class="text-xl font-semibold text-primary-600 dark:text-primary-500">Tema</p>
+        <small>Escolha o tema que melhor se encaixa a você.</small>
+      </div>
+
+      <div class="col-span-4 flex items-center">
+        <button [ngClass]="darkModeService.isDarkMode ? 'btn-md-white' : 'btn-md-secondary'" (click)="toggleTheme()">
+          {{ darkModeService.isDarkMode ? '☀️  Alterar para modo Claro' : '🌙 Alterar para modo Escuro' }}
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+
+    <div class="grid grid-cols-5 gap-2">
+
+      <div class="col-span-1">
+        <p class="text-xl font-semibold text-primary-600 dark:text-primary-500">Minha foto</p>
+        <small>Escolha um foto sua, link ou do computador.</small>
+      </div>
+
+      <div class="col-span-4 flex items-center">
+        <div
+          class="me-avatar-lg"
+          [style.background-image]="meService.urlAvatar">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>

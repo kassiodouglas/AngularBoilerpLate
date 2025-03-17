@@ -6,9 +6,12 @@ import { SharedModule } from '../../shared/shared.module';
 import { TestFormularyComponent } from './pages/formulary/test-formulary.component';
 import { ButtonsComponent } from './pages/buttons/buttons.component';
 import { NotiflixComponent } from './pages/notiflix/notiflix.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { ModalComponent } from './pages/modal/modal.component';
 import { OffcanvasComponent } from './pages/offcanvas/offcanvas.component';
+import { TablyComponent } from './pages/tably/tably.component';
+import { TabsComponent } from './pages/tabs/tabs.component';
+import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -17,13 +20,16 @@ import { OffcanvasComponent } from './pages/offcanvas/offcanvas.component';
     ButtonsComponent,
     NotiflixComponent,
     ModalComponent,
-    OffcanvasComponent
+    OffcanvasComponent,
+    TablyComponent,
+    TabsComponent
   ],
   imports: [
     CommonModule,
     DevRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbNavModule
   ]
 })
 export class DevModule { }
