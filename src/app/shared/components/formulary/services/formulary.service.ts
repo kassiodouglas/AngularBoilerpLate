@@ -56,6 +56,7 @@ export class FormularyService {
       onlyLettersNumbers: `Somente letras e números permitidos no campo '${label}'.`,
       onlyLetters: `Somente letras são permitidos no campo '${label}'.`,
       onlNumbers: `Somente números são permitidos no campo '${label}'.`,
+      confirmPasswordValidator: `Senhas não são iguais.`,
     };
 
     return errorMessages[errorKey] || `Erro: ${errorKey}: ${errorValue}`;
