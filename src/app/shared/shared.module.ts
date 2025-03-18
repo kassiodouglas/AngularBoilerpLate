@@ -15,13 +15,17 @@ import { PageTitleComponent } from './components/page-title/page-title.component
 import { TablyModule } from './components/tably/tably.module';
 import { LayoutComponent } from './components/layout/layout.component';
 import { LayoutSidebarLinkComponent } from './components/layout/sidebar-link/sidebar-link.component';
+import { PanelModule } from './components/panel/panel.module';
+import { PanelService } from './components/panel/services/panel.service';
+import { PanelComponent } from './components/panel/components/panel/panel.component';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     FormularyModule,
-    TablyModule
+    TablyModule,
+    PanelModule
   ],
   declarations: [
     LayoutSidebarLinkComponent,
@@ -40,10 +44,11 @@ import { LayoutSidebarLinkComponent } from './components/layout/sidebar-link/sid
     SwitchyComponent,
     BreadcumbComponent,
     PageTitleComponent,
-    TablyModule
+    PanelComponent
   ],
   providers: [
-    FormularyService
+    FormularyService,
+    PanelService
   ]
 })
 export class SharedModule { }

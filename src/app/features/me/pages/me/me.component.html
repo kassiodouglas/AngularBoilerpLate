@@ -3,7 +3,7 @@
   <breadcumb [breadcumbs]="['Playground','Minhas informações']"/>
   <page-title title="Minhas informações" text="Minha área de configurações"/>
 
-  <section class="section">
+  <section class="section" >
     <div class="grid grid-cols-5 gap-2">
 
       <div class="col-span-1">
@@ -12,7 +12,7 @@
       </div>
 
       <div class="col-span-4">
-        <form [formGroup]="formMe" class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <form   [formGroup]="formChangePasswordService.formMe" (ngSubmit)="formChangePasswordService.submit()" class="grid grid-cols-1 md:grid-cols-3 gap-3">
             <div>
               <inputy type="password" label="Senha atual" controlName="current"/>
             </div>
@@ -23,7 +23,7 @@
               <inputy type="password" label="Confirmação da nova senha" controlName="confirm"/>
             </div>
             <div>
-              <button type="submit" class="btn-md-success">Alterar senha</button>
+              <button id="formChangePasswordServiceBtnSubmit" [disabled]="!formChangePasswordService.valid" type="submit" class="btn-md-success">Alterar senha</button>
             </div>
         </form>
 

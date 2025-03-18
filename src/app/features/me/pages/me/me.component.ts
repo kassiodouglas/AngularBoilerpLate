@@ -12,14 +12,12 @@ import { MeService } from '../../services/me.service';
 })
 export class MeComponent {
 
-  formMe:FormGroup;
-
   constructor(
-    private formChangePasswordService:FormChangePasswordService,
+    public formChangePasswordService:FormChangePasswordService,
     public darkModeService:DarkModeService,
     public meService:MeService,
   ){
-    this.formMe = this.formChangePasswordService.createForm();
+    this.formChangePasswordService.createForm();
   }
 
   toggleTheme(){

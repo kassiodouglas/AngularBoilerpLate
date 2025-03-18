@@ -3,4 +3,38 @@
 <breadcumb [breadcumbs]="['Playground','Offcanvas']"/>
 <page-title title="Offcanvas" text="Documentação sobre uso dos offcanvas"/>
 
+<div class="grid grid-cols-4 gap-3">
+  <button class="btn-md-primary" (click)="openRight(content)">Direita</button>
+  <button class="btn-md-primary" (click)="openLeft(content)">Esquerda</button>
+
+  <button class="btn-md-primary" (click)="openTop(content)">Topo</button>
+  <button class="btn-md-primary" (click)="openBottom(content)">Baixo</button>
+</div>
+
 </main>
+
+
+
+<ng-template #content>
+  <panel>
+    <div title>
+      <div class="opacity-20 text-sm">Edição de</div>
+      <div class="text-lg font-bold">Usuários</div>
+    </div>
+    <div content>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat metus vitae magna scelerisque, in cursus lectus consequat. Nunc et lacus semper, pharetra magna ac, blandit velit. Nam eu cursus magna. Aenean at aliquet sem, non euismod nunc. Curabitur augue dolor, bibendum at metus sit amet, condimentum posuere nisi. Mauris scelerisque ut ipsum in porta. Etiam non elementum nibh, ac aliquam lorem. Vestibulum tempor dictum ex eu mattis. Vivamus imperdiet dapibus dapibus. Vivamus bibendum eros magna, nec fermentum enim aliquam eget. Sed sed libero bibendum elit auctor pellentesque lacinia non dolor. Maecenas suscipit, odio eget semper semper, nunc nibh placerat risus, id varius diam lacus ut risus. Sed sapien felis, sollicitudin vitae suscipit eget, faucibus nec justo. Morbi id egestas ex. Sed quis fermentum odio.
+
+      Ut et pulvinar eros. Phasellus semper, ante vulputate euismod eleifend, tortor erat imperdiet ante, non maximus ante dolor et mauris. Nam iaculis viverra mi, non sodales lorem faucibus vitae. Nunc ullamcorper vehicula dui, in tempor tortor congue et. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin volutpat gravida arcu, eu auctor nunc condimentum sit amet. Vestibulum bibendum lobortis ullamcorper. Suspendisse potenti. Nulla imperdiet enim in nunc venenatis, at dictum lorem hendrerit. Maecenas eget pharetra lorem. Nam aliquam elit odio, a tempor dolor vestibulum vel.
+
+      Donec ac orci vitae dui tincidunt ullamcorper nec id libero. Suspendisse diam quam, scelerisque nec mi quis, viverra luctus urna. Praesent elementum feugiat pulvinar. Nulla feugiat sit amet nulla semper efficitur. Donec eget auctor justo. Pellentesque mattis nec ligula ultricies mollis. Nunc in imperdiet erat. Aliquam ac ultricies velit, vitae tristique leo. In eu porta lorem, ac cursus lorem. Cras tincidunt facilisis orci et laoreet. Ut ut semper ligula, quis aliquam dolor. Duis volutpat est nec felis mollis, vel congue eros tempus. Cras ultrices finibus turpis, eu rhoncus leo sodales non. Nunc sem sapien, gravida eu ipsum a, lobortis tincidunt diam. Aliquam scelerisque elit et quam pellentesque, eget pharetra purus placerat.
+
+      Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce eu viverra eros, sit amet faucibus lectus. Proin justo ante, eleifend id ultrices nec, fringilla vel arcu. Nam a libero quis nisl fringilla tincidunt id a ex. Nulla quis placerat mauris, a interdum dui. Sed pulvinar tortor et risus auctor iaculis. Suspendisse porta est vitae pretium pharetra.
+
+      Donec semper mi sed risus condimentum gravida. Nullam quam felis, porta a ante at, lobortis mattis mauris. Mauris egestas, turpis in elementum imperdiet, metus magna lacinia diam, at tempus sem arcu eget odio. Nullam vel vulputate sapien. Vestibulum finibus dignissim sapien sed venenatis. Curabitur varius ipsum aliquet rutrum vulputate. Duis quis mi rhoncus, malesuada lorem eget, facilisis felis. Maecenas bibendum felis odio, a euismod felis tristique quis. Aenean sodales ante id porttitor scelerisque. Nam euismod est eros, id hendrerit diam mollis in. Morbi sem justo, pharetra a ex in, varius pulvinar augue. Proin blandit, mi non pulvinar faucibus, turpis diam condimentum tortor, non dapibus ligula diam ut lacus. Nunc pellentesque volutpat enim ac dignissim. Nunc sit amet dolor id lacus sodales fringilla nec quis purus. Proin tortor magna, fermentum sit amet viverra eget, pretium vitae lectus.
+
+      Cras sit amet justo turpis. In quis lorem non diam elementum imperdiet. Morbi consectetur quam dui, eget bibendum ante pharetra vitae. Curabitur porta sem turpis, sit amet volutpat libero finibus nec. Phasellus dapibus neque ac nulla gravida, in feugiat urna ullamcorper. Donec mollis ligula diam, at auctor lorem accumsan eu. Suspendisse condimentum libero dolor, vitae fermentum urna vehicula vitae. Donec sit amet tortor vel enim tempor rutrum in in lacus. Aenean imperdiet commodo ultricies. Cras nec libero a tortor imperdiet fringilla ac sed turpis. Nam odio neque, faucibus in lorem porttitor, vestibulum varius ligula. Etiam vulputate malesuada augue ut ornare. Cras feugiat lorem eu purus lacinia, non varius nibh maximus.
+
+      Nunc pulvinar ultricies placerat. Sed imperdiet venenatis lacus vitae facilisis. Donec ut sollicitudin tortor, eget lobortis odio. Praesent id erat mauris. Vestibulum tempus accumsan sem, non malesuada mi tristique vitae. Vivamus tempor vitae tortor vitae scelerisque. Sed venenatis sapien aliquet, vestibulum dui nec, tincidunt diam. Vivamus lacinia consequat laoreet. Nunc sed auctor urna, eget blandit urna. Vivamus id dui eget mauris gravida lacinia. Donec ac sollicitudin eros. Suspendisse volutpat dapibus purus, eu eleifend nibh eleifend et. Quisque eleifend diam a ligula facilisis, ut placerat dui tempus. Nullam eu auctor augue, sit amet maximus risus.
+    </div>
+  </panel>
+</ng-template>

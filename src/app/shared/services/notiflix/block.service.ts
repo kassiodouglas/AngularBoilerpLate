@@ -11,8 +11,8 @@ export class BlockService {
 
   private init() {
     Notiflix.Block.init({
-      svgSize: '45px',
-      backgroundColor: this.darkModeService.isDarkMode ? 'rgba(48, 54, 48, 0.8)' : '#fff',
+      svgSize: '100%',
+      backgroundColor: this.darkModeService.isDarkMode ? 'rgba(48, 54, 48, 0.8)' : 'rgba(255, 255, 255, 0.8)',
       svgColor: this.darkModeService.isDarkMode ? '#fff' : '#303630',
     });
   }

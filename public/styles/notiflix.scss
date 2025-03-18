@@ -1,0 +1,12 @@
+
+// força o block não ter altura minima
+.nx-block-temporary-position{
+  min-height: auto !important;
+}
+
+// força o loader do block a uma altura máxima
+.notiflix-block-icon{
+  max-width: 45px !important;
+  max-height: 45px !important;
+}
+

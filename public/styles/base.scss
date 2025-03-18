@@ -1,6 +1,7 @@
 @use 'bootstrap/scss/bootstrap';
 @use 'animate.css';
 @use 'me.scss';
+@use 'notiflix.scss';
 
 @tailwind base;
 @tailwind components;
@@ -13,4 +14,3 @@ body{
   overflow-x: hidden;
   line-height: 1.5 !important;
 }
-

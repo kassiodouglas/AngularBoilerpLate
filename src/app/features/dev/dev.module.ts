@@ -11,7 +11,6 @@ import { ModalComponent } from './pages/modal/modal.component';
 import { OffcanvasComponent } from './pages/offcanvas/offcanvas.component';
 import { TablyComponent } from './pages/tably/tably.component';
 import { TabsComponent } from './pages/tabs/tabs.component';
-import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -29,7 +28,6 @@ import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
     DevRoutingModule,
     SharedModule,
     ReactiveFormsModule,
-    NgbNavModule
   ]
 })
 export class DevModule { }

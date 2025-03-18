@@ -1,0 +1,12 @@
+<div class="offcanvas-header">
+  <div class="offcanvas-title">
+    <ng-content select="[title]"></ng-content>
+  </div>
+  <button type="button" class="btn-close" aria-label="Close" (click)="ngbOffcanvas.dismiss()"></button>
+</div>
+
+<div class="offcanvas-body">
+  <div  class="overflow-auto" [ngClass]="panelService.classHeight">
+    <ng-content select="[content]"></ng-content>
+  </div>
+</div>
