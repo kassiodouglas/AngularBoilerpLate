@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -8,7 +7,6 @@ import { RouterModule } from '@angular/router';
   ],
   declarations: [
   ],
-
-   exports: [RouterModule]
+  exports: []
 })
 export class CoreModule { }

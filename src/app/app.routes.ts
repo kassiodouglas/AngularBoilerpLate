@@ -7,7 +7,6 @@ export const routes: Routes = [
 
   { path: 'login', loadChildren: () => import('./features/login/login.module').then(m => m.LoginModule) },
 
-  // Features endpoints
   {path: "", component: LayoutComponent, children: [
     { path: 'home', loadChildren: () => import('./features/home/home.module').then(m => m.HomeModule) },
     { path: 'minha-area', loadChildren: () => import('./features/me/me.module').then(m => m.MeModule) },
