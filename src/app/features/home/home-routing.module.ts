@@ -5,12 +5,8 @@ import { NgModule } from '@angular/core';
 import { LayoutComponent } from '../../shared/components/layout/layout.component';
 
 const routes: Routes = [
-  {
-    path:"", component:LayoutComponent, children:[
-      {path:"", component:HomeComponent},
-      {path:"como-usar", component:HowtouseComponent}
-    ]
-  }
+  { path: "", component: HomeComponent },
+  { path: "como-usar", component: HowtouseComponent }
 ];
 
 

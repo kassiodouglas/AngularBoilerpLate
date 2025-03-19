@@ -40,6 +40,8 @@ export class TablyComponent implements OnInit, OnChanges {
 
   screenSize!:string;
 
+  @Input() maxHeight:string = '300px';
+
   constructor(
     private tablyOrderService:TablyOrderService,
     private tablySearchService:TablySearchService,

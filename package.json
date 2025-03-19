@@ -22,7 +22,8 @@
     "make:directive":"node src/commands/make.js --dir=directive",
     "make:model":"node src/commands/make.js --dir=model",
     "make:pipe":"node src/commands/make.js --dir=pipe",
-    "make:service":"node src/commands/make.js --dir=service"
+    "make:service":"node src/commands/make.js --dir=service",
+    "make:module":"node src/commands/make.js --dir=module"
 
   },
   "private": true,

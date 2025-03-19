@@ -4,9 +4,8 @@ import { MeComponent } from './pages/me/me.component';
 import { LayoutComponent } from '../../shared/components/layout/layout.component';
 
 const routes: Routes = [
-  {path:"", component:LayoutComponent, children:[
-    {path:'meus-dados', component:MeComponent},
-  ]}
+  { path: '', redirectTo: 'configuracoes', pathMatch: 'full' },
+  { path: 'configuracoes', component: MeComponent },
 ];
 
 @NgModule({

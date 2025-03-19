@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OffcanvasComponent } from './offcanvas.component';
+import { ModalComponent } from './modal.component';
 
-describe('OffcanvasComponent', () => {
-  let component: OffcanvasComponent;
-  let fixture: ComponentFixture<OffcanvasComponent>;
+describe('ModalComponent', () => {
+  let component: ModalComponent;
+  let fixture: ComponentFixture<ModalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [OffcanvasComponent]
+      declarations: [ModalComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(OffcanvasComponent);
+    fixture = TestBed.createComponent(ModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

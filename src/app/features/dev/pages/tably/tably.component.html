@@ -1,6 +1,18 @@
 <main data-aos="fade-left">
 
-<breadcumb [breadcumbs]="['Playground','Tably']"/>
+<breadcumb [breadcumbs]="['Dev','Playground','Tably']"/>
 <page-title title="Tably" text="Documentação sobre o módulo Tably"/>
+
+  <tably
+    maxHeight = "calc(100vh - 200px)"
+    [selectRows]="true"
+    [header]="tablyHeaderConfig"
+    [rows]="tablyRows"
+    (onRowBlock)="tablyUsersService.blockUser($event)"
+    (onRowEdit)="tablyUsersService.editUser($event)"
+    (onRowExport)="tablyUsersService.exportUser($event)"
+    (onSelectedRowsBlock)="tablyUsersService.blockSelectedUsers($event)"
+    (onSelectedRowsExport)="tablyUsersService.exportSelectedUsers($event)"
+  />
 
 </main>

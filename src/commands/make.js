@@ -43,6 +43,9 @@ if (['feature'].includes(dir)) {
 }else if(['page'].includes(dir)) {
   command = `ng generate ${type} /features/${args[1].toLowerCase()}/pages/${args[2]} --standalone=false  --selector=page-${args[2]} --module=${args[1].toLowerCase()}`;
 
+}else if(['module'].includes(dir)) {
+  command = `ng generate ${type} /shared/components/${args[1].toLowerCase()} --routing=false `;
+
 }else if(['service'].includes(dir) && featured) {
   command = `ng generate ${type} /features/${args[1].toLowerCase()}/${dir}s/${args[2]}`;
 
@@ -50,7 +53,6 @@ if (['feature'].includes(dir)) {
   command = `ng generate ${type} /${mod_type}/${dir}s/${args[1]}`
 }
 
-console.log(command)
 
 exec(command, (err, stdout, stderr) => {
   if (err) {

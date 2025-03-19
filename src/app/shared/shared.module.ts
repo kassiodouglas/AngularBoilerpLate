@@ -18,6 +18,10 @@ import { LayoutSidebarLinkComponent } from './components/layout/sidebar-link/sid
 import { PanelModule } from './components/panel/panel.module';
 import { PanelService } from './components/panel/services/panel.service';
 import { PanelComponent } from './components/panel/components/panel/panel.component';
+import { ModalModule } from './components/modal/modal.module';
+import { ModalService } from './components/modal/services/modal.service';
+import { ModalComponent } from './components/modal/components/modal/modal.component';
+import { TablyComponent } from './components/tably/components/tably/tably.component';
 
 @NgModule({
   imports: [
@@ -25,7 +29,8 @@ import { PanelComponent } from './components/panel/components/panel/panel.compon
     RouterModule,
     FormularyModule,
     TablyModule,
-    PanelModule
+    PanelModule,
+    ModalModule
   ],
   declarations: [
     LayoutSidebarLinkComponent,
@@ -44,11 +49,14 @@ import { PanelComponent } from './components/panel/components/panel/panel.compon
     SwitchyComponent,
     BreadcumbComponent,
     PageTitleComponent,
-    PanelComponent
+    PanelComponent,
+    ModalComponent,
+    TablyComponent
   ],
   providers: [
     FormularyService,
-    PanelService
+    PanelService,
+    ModalService
   ]
 })
 export class SharedModule { }

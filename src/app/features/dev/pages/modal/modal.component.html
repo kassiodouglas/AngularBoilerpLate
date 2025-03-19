@@ -1,6 +1,32 @@
 <main data-aos="fade-left">
 
-<breadcumb [breadcumbs]="['Playground','Modal']"/>
+<breadcumb [breadcumbs]="['Dev','Playground','Modal']"/>
 <page-title title="Modal" text="Documentação sobre uso dos modals"/>
 
+
+<div class="grid grid-cols-5 gap-2">
+  <button class="btn-md-primary" (click)="openModalDefault(dynamicModal)">Default</button>
+  <button class="btn-md-primary" (click)="openModalStatic(dynamicModal)">Static</button>
+  <button class="btn-md-primary" (click)="openModalCentered(dynamicModal)">Centered</button>
+  <button class="btn-md-primary" (click)="openModalLarge(dynamicModal)">Large</button>
+  <button class="btn-md-primary" (click)="openModalSmall(dynamicModal)">Small</button>
+</div>
+
 </main>
+
+
+<ng-template #dynamicModal>
+  <modal>
+    <div title>
+      <div class="opacity-20 text-sm">Edição de</div>
+      <div class="text-lg font-bold">Usuários</div>
+    </div>
+    <div content>
+      ....
+    </div>
+    <div footer>
+      <button class="btn-md-success" (click)="modalService.close()">Fechar</button>
+    </div>
+  </modal>
+</ng-template>
+

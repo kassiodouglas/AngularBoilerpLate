@@ -8,9 +8,11 @@ import { ButtonsComponent } from './pages/buttons/buttons.component';
 import { NotiflixComponent } from './pages/notiflix/notiflix.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModalComponent } from './pages/modal/modal.component';
-import { OffcanvasComponent } from './pages/offcanvas/offcanvas.component';
+import { PanelComponent } from './pages/panel/panel.component';
 import { TablyComponent } from './pages/tably/tably.component';
 import { TabsComponent } from './pages/tabs/tabs.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -19,7 +21,7 @@ import { TabsComponent } from './pages/tabs/tabs.component';
     ButtonsComponent,
     NotiflixComponent,
     ModalComponent,
-    OffcanvasComponent,
+    PanelComponent,
     TablyComponent,
     TabsComponent
   ],
@@ -28,6 +30,7 @@ import { TabsComponent } from './pages/tabs/tabs.component';
     DevRoutingModule,
     SharedModule,
     ReactiveFormsModule,
+    NgbModule,
   ]
 })
 export class DevModule { }

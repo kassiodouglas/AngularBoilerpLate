@@ -14,18 +14,18 @@
   </div>
 
   <div class="mx-2">
-    <button class="px-3 py-2 bg-primary-800 rounded-s hover:bg-primary-600" type="submit"> <i class="fa-solid fa-magnifying-glass"></i> </button>
-    <button class="px-3 py-2 bg-primary-800 rounded-e hover:bg-primary-600" type="button" (click)="cleanSearch()"> <i class="fa-solid fa-broom"></i> </button>
+    <button class="px-3 py-2 bg-primary-800 text-white rounded-s hover:bg-primary-600" type="submit"> <i class="fa-solid fa-magnifying-glass"></i> </button>
+    <button class="px-3 py-2 bg-primary-800 text-white rounded-e hover:bg-primary-600" type="button" (click)="cleanSearch()"> <i class="fa-solid fa-broom"></i> </button>
   </div>
 
 </form>
 
 
 <!-- table -->
-<div class="flex flex-col h-full dark:bg-secondary-700 rounded-md border-l border-r dark:border-slate-600">
+<div class="flex flex-col h-full bg-secondary-100 dark:bg-secondary-700 rounded-md border-l border-r dark:border-slate-600" [style.maxHeight]="maxHeight">
 
   <!-- header -->
-  <div class="p-1 w-full rounded-t-md flex items-center dark:bg-slate-600">
+  <div class="p-1 w-full rounded-t-md flex items-center bg-secondary-700 dark:bg-secondary-600 text-white ">
     <div class="grid w-full items-center py-1" [ngClass]="headerGridColsClass">
 
       @for (col of header; track $index; let isFirst = $first) {
@@ -91,10 +91,16 @@
 
 <!-- selected options -->
 @if(interactedCheckbox){
-<div class="flex justify-start absolute ml-16 bottom-5 w-screen opacity-70 hover:opacity-100">
+<div class="flex justify-center absolute left-0 bottom-5 w-full">
     <div [ngClass]="{'animate__fadeInUp':totalSelected>0, 'animate__fadeOutDown':totalSelected==0}" class="selecteds-menu animate__animated animate__faster">
 
-      <div class="p-2 px-3"><i class="fa-solid fa-square-check"></i> {{totalSelected}}</div>
+      <div class="p-2 px-3"><i class="fa-solid fa-square-check"></i> {{totalSelected}}
+        @if (totalSelected == 1) {
+          linha selecionada
+        } @else {
+          linhas selecionadas
+        }
+      </div>
 
       <div class="hover:bg-gray-800 p-2 px-3 cursor-pointer rounded-md" (click)="emitSelectedRowsExport()"><i class="fa-solid fa-file-arrow-down"></i></div>
 
