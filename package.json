@@ -1,30 +1,29 @@
 {
   "name": "boilerplate",
   "version": "1.0.0",
+  "bin": {
+    "li2": "./src/commands/cli.js"
+  },
   "scripts": {
     "ng": "ng",
-
     "serve": "ng serve --configuration development --host 0.0.0.0  --port 3000",
     "serve:test": "ng serve --configuration test --host 0.0.0.0  --port 3000",
     "serve:mock": "ng serve --configuration mock --host 0.0.0.0  --port 3000",
     "serve:prod": "ng serve --configuration production --host 0.0.0.0  --port 3000",
-
     "build": "ng build --configuration development",
     "build:test": "ng build --configuration test",
     "build:mock": "ng build --configuration mock",
     "build:prod": "ng build --configuration production",
-
-    "make:guard":"node src/commands/make.js --dir=guard",
-    "make:interceptor":"node src/commands/make.js --dir=interceptor",
-    "make:feature":"node src/commands/make.js --dir=feature",
-    "make:page":"node src/commands/make.js --dir=page",
-    "make:component":"node src/commands/make.js --dir=component",
-    "make:directive":"node src/commands/make.js --dir=directive",
-    "make:model":"node src/commands/make.js --dir=model",
-    "make:pipe":"node src/commands/make.js --dir=pipe",
-    "make:service":"node src/commands/make.js --dir=service",
-    "make:module":"node src/commands/make.js --dir=module"
-
+    "make:guard": "node src/commands/make.js --dir=guard",
+    "make:interceptor": "node src/commands/make.js --dir=interceptor",
+    "make:feature": "node src/commands/make.js --dir=feature",
+    "make:page": "node src/commands/make.js --dir=page",
+    "make:component": "node src/commands/make.js --dir=component",
+    "make:directive": "node src/commands/make.js --dir=directive",
+    "make:model": "node src/commands/make.js --dir=model",
+    "make:pipe": "node src/commands/make.js --dir=pipe",
+    "make:service": "node src/commands/make.js --dir=service",
+    "make:module": "node src/commands/make.js --dir=module"
   },
   "private": true,
   "dependencies": {
@@ -37,6 +36,7 @@
     "@angular/platform-browser": "^19.0.0",
     "@angular/platform-browser-dynamic": "^19.0.0",
     "@angular/router": "^19.0.0",
+    "@angular/service-worker": "^19.0.0",
     "@faker-js/faker": "^9.6.0",
     "@lithiumjs/angular": "^8.0.1",
     "@lithiumjs/ngx-virtual-scroll": "^0.3.3",
@@ -45,6 +45,7 @@
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.3",
+    "commander": "^13.1.0",
     "miragejs": "^0.1.48",
     "moment": "^2.30.1",
     "ngx-mask": "^19.0.6",

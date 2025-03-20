@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { ScreenService } from './../../../services/screen.service';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { SidebarLink } from '../../../models/SidebarLink';
 
 @Component({
@@ -12,9 +13,17 @@ export class LayoutSidebarLinkComponent {
   open = false;
 
   @Input({required:true}) link!:SidebarLink;
+  @Output() onCloseSidebar: EventEmitter<void> = new EventEmitter();
+
+  constructor(private screenService:ScreenService){}
 
   toggleOpen(){
     this.open = !this.open;
+  }
+
+  closeSidebar(){
+    if(this.screenService.currentSize == 'sm')
+    this.onCloseSidebar.emit();
   }
 
   get separator(){

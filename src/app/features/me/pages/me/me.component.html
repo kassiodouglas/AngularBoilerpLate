@@ -3,16 +3,16 @@
   <breadcumb [breadcumbs]="['Minha área','Configurações']"/>
   <page-title title="Configurações" text="Minha área de configurações"/>
 
-  <section class="section" >
-    <div class="grid grid-cols-5 gap-2">
+  <section class="section">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-2 w-full">
 
-      <div class="col-span-1">
+      <div class="md:col-span-1">
         <p class="text-xl font-semibold text-primary-600 dark:text-primary-500">Trocar senha de acesso</p>
         <small>Faça o resete da sua senha.</small>
       </div>
 
-      <div class="col-span-4">
-        <form   [formGroup]="formChangePasswordService.formMe" (ngSubmit)="formChangePasswordService.submit()" class="grid grid-cols-1 md:grid-cols-3 gap-3">
+      <div class="md:col-span-4">
+        <form [formGroup]="formChangePasswordService.formMe" (ngSubmit)="formChangePasswordService.submit()" class="grid grid-cols-1 md:grid-cols-3 gap-3">
             <div>
               <inputy type="password" label="Senha atual" controlName="current"/>
             </div>
@@ -26,7 +26,6 @@
               <button id="formChangePasswordServiceBtnSubmit" [disabled]="!formChangePasswordService.valid" type="submit" class="btn-md-success">Alterar senha</button>
             </div>
         </form>
-
       </div>
 
     </div>
@@ -34,7 +33,7 @@
 
   <section class="section">
 
-    <div class="grid grid-cols-5 gap-2">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-2">
 
       <div class="col-span-1">
         <p class="text-xl font-semibold text-primary-600 dark:text-primary-500">Tema</p>
@@ -52,7 +51,7 @@
 
   <section class="section">
 
-    <div class="grid grid-cols-5 gap-2">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-2">
 
       <div class="col-span-1">
         <p class="text-xl font-semibold text-primary-600 dark:text-primary-500">Minha foto</p>

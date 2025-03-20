@@ -1,25 +1,44 @@
 <div class="screen">
   <!-- Sidebar -->
+
+  <div data-aos="fade-down" (click)="toggleSidebar()" class="btn-menu-bars-out"><i class="fa-solid fa-bars"></i></div>
+
+  <div [ngClass]="{'hidden':isOpen}" class="topbar">
+    <div data-aos="fade-down" (click)="toggleSidebar()" class="btn-menu-bars"><i class="fa-solid fa-bars"></i></div>
+    <div>
+      <div class="font-semibold text-lg truncate">
+        Kássio Douglas Queiroz de Souza
+      </div>
+      <div class="text-sm opacity-55 truncate">
+        kass.doug&#64;gmail.com
+      </div>
+    </div>
+  </div>
+
   <div
     class="sidebar"
     [class.-translate-x-full]="!isOpen"
   >
+
     <div class="flex flex-col h-full p-2">
       <!-- Avatar e informações -->
-      <div class="flex flex-col items-center">
+      <div class="flex flex-row items-center">
         <div
           class="me-avatar-sm"
           [style.background-image]="meService.urlAvatar">
         </div>
 
         <div>
-          <div class="font-semibold text-lg truncate w-[170px]">
-            Kássio Douglas Quiroz de Souza
+          <div class="font-semibold text-2xl md:text-lg truncate max-w-[70%] md:w-[170px]">
+            Kássio Douglas Queiroz de Souza
           </div>
-          <div class="text-sm opacity-55 truncate w-[170px]">
+          <div class="text-xl md:text-sm opacity-55 truncate max-w-[70%] md:w-[170px]">
             kass.doug&#64;gmail.com
           </div>
         </div>
+
+        <div (click)="toggleSidebar()" class="btn-close"><i class="fa-solid fa-xmark"></i></div>
+
       </div>
 
       <div class="border-b border-secondary-300  dark:border-secondary-800 w-full my-3"></div>
@@ -27,7 +46,7 @@
       <!-- Links -->
       <div class="overflow-auto px-1">
         @for (link of links; track link) {
-          <sidebar-link [link]="link"/>
+          <sidebar-link [link]="link" (onCloseSidebar)="toggleSidebar()"/>
         }
       </div>
     </div>
@@ -35,14 +54,15 @@
 
   <!-- Botão de Toggle (sempre na esquerda) -->
   <div
-    class="btn-toggle"
+    data-aos="fade-right"
+    class="hidden"
     (click)="toggleSidebar()"
   >
     <i class="fa-solid fa-chevron-left transition-all duration-300" [ngClass]="isOpen ? 'rotate-0' : 'rotate-180'"></i>
   </div>
 
   <!-- Conteúdo Principal -->
-  <div class="content ml-72 px-2" [ngClass]="{'!ml-0 !px-10':!isOpen}">
+  <div class="content" [ngClass]="{'md:!ml-0 md:!px-20':!isOpen}">
     <router-outlet></router-outlet>
   </div>
 
