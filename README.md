@@ -10,6 +10,12 @@ Execute para instalar as bibliotecas pré-definidas:
 npm i
 ```
 
+## Com docker
+Instale o app na porta 3000 com docker
+```
+docker-compose up --build --force-recreate -d
+```
+
 # Bibliotecas Usadas Neste Projeto
 Abaixo está uma lista das principais bibliotecas utilizadas neste projeto, juntamente com suas descrições e casos de uso.
 
